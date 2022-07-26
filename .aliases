@@ -29,18 +29,6 @@ alias clipboard="xclip -sel clip"
 alias week="date +%V"
 alias localip="ifconfig eno1"
 
-# GIT
-alias gp="git push"
-alias gl="git pull"
-alias gs="git status"
-alias ga="git add ."
-alias gb="git branch"
-alias gac="git commit -am"
-alias gc="git commit -m"
-alias gcd="git checkout develop"
-alias gcm="git checkout master"
-alias standup="git log --author='$(git config user.name)' --since='yesterday.midnight' --oneline --pretty=format:'%s %Cblue(%ar)%Creset' --color"
-
 # NPM
 alias npmupdatepatch="ncu -u --target patch"
 alias npmupdateminor="ncu -u --target minor"
