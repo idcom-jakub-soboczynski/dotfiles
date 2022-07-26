@@ -1,0 +1,5 @@
+[user]
+	name = Jakub Soboczyński
+	email = jakub.soboczynski@idcom.pl
+[alias]
+	s = status -s
