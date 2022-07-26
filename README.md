@@ -7,7 +7,7 @@
 Clone the project
 
 ```bash
-  git clone --bare https://github.com/teziovsky/dotfiles.git $HOME/.dotfiles
+  git clone --bare https://github.com/idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
 ```
 
 Define the alias in the current shell scope
@@ -28,9 +28,9 @@ Awesome! You’re done. 🎊 🥳
 
 ## Author 🙎🏼‍
 
-#### [@teziovsky](https://www.github.com/teziovsky)
+#### [@teziovsky](https://www.github.com/idcom-jakub-soboczynski)
 
 ## Contact ☎️
 
-If you have any suggestions, please [email me here](mailto:jakub.soboczynski@icloud.com)! 🔥
+If you have any suggestions, please [email me here](mailto:jakub.soboczynski@idcom.pl)! 🔥
 
