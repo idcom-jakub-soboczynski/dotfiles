@@ -56,4 +56,4 @@ alias dkill='docker rm $(docker stop $(docker ps -aq))'
 
 ## DOTFILES
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dotfilesupdate="dotfiles ac '`date +'%Y-%m-%d'`: update dotfiles' && dotfiles push"
+alias dotfilesupdate="dotfiles ac '`date +'%Y-%m-%d %H:%M:%S'`: update dotfiles' && dotfiles push"
