@@ -10,7 +10,6 @@ unalias 8
 unalias 9
 unalias afind
 unalias diff
-unalias which-command
 
 # GREP
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
@@ -57,3 +56,4 @@ alias dkill='docker rm $(docker stop $(docker ps -aq))'
 
 ## DOTFILES
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfilesupdate="dotfiles ac '`date +'%Y-%m-%d'`: update dotfiles' && dotfiles push"
