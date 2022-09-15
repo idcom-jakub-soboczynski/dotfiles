@@ -1,0 +1,32 @@
+{
+  "1E40:8B75BC0E": {
+    "_name": "Wireless Mouse MX Master 2S"
+  },
+  "1E40:9FCCB43A": {
+    "_name": "MX Keys Wireless Keyboard",
+    "fn-swap": false
+  },
+  "4069:8B75BC0E": {
+    "_name": "Wireless Mouse MX Master 2S",
+    "dpi": 1000,
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": true,
+    "smart-shift": 16
+  },
+  "4069:C2159FB8": {
+    "_name": "Wireless Mouse MX Master 2S",
+    "dpi": 1000,
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": true,
+    "smart-shift": 16
+  },
+  "408A:9FCCB43A": {
+    "_name": "MX Keys Wireless Keyboard",
+    "fn-swap": false
+  },
+  "408A:C2159FB8": {
+    "_name": "MX Keys Wireless Keyboard",
+    "fn-swap": false
+  },
+  "_version": "1.0.1"
+}
