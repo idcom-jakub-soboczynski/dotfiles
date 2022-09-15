@@ -35,4 +35,5 @@
 [user]
 	name = Jakub Soboczyński
 	email = jakub.soboczynski@idcom.pl
-
+[core]
+	editor = vim
