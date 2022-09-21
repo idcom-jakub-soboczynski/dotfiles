@@ -18,7 +18,7 @@ alias egrep="egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox
 
 # GIT
 alias gs="git status"
-alias cleanbranches="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias cleanbranches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
 
 # GENERAL
 alias c="clear"
