@@ -17,7 +17,18 @@ alias fgrep="fegrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.to
 alias egrep="egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
 
 # GIT
+alias ga="git add ."
+alias gc="git commit -m"
+alias gac="git commit -am"
+alias gbd="git checkout develop"
+alias gbm="git checkout master"
+alias gf="git fetch"
+alias gd="git diff"
+alias gl="git log"
 alias gs="git status"
+alias gss="git status -s"
+alias gp="git pull"
+alias gpush="git push"
 alias cleanbranches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
 
 # GENERAL
@@ -33,10 +44,9 @@ alias week="date +%V"
 alias localip="ifconfig eno1"
 
 # NPM
-alias npmupdatepatch="ncu -u --target patch"
-alias npmupdateminor="ncu -u --target minor"
-alias npmupdatemajor="ncu -u --target major"
-alias npmupdate="ncu -i"
+alias ncupatch="ncu -ui --target patch"
+alias ncuminor="ncu -ui --target minor"
+alias ncumajor="ncu -ui --target major"
 
 # IDCOM
 alias igs="idcom git status"
