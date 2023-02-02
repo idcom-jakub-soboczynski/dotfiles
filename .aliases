@@ -54,6 +54,7 @@ alias igc="idcom git clone"
 alias igl="idcom git pull"
 alias idu="idcom docker up"
 alias idd="idcom docker down"
+alias panelstandup="gtpanel && git standup"
 
 # SPECS
 alias mock_panel_api="cd ~/IDcom/DEVELOP/pl.idcom.develop.api.specs/specs/pl.idcom.panel.api && prism mock -d pl.idcom.panel.api.json -p 4010"
@@ -62,6 +63,7 @@ alias mock_superszkolna_v1_api="cd ~/IDcom/DEVELOP/pl.idcom.develop.api.specs/sp
 # SHORTCUTS
 alias gtcrm="cd ~/IDcom/CRM/pl.idcom.crm.front.app"
 alias gtpanel="cd ~/IDcom/PANEL/pl.idcom.panel.front"
+alias gtpanelold="cd ~/IDcom/PANEL/pl.idcom.panel.front.old"
 
 # DOCKER
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
