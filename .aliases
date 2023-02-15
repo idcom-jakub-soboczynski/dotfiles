@@ -42,6 +42,7 @@ alias pstorm="phpstorm"
 alias clipboard="xclip -sel clip"
 alias week="date +%V"
 alias localip="ifconfig eno1"
+alias sz="source ~/.zshrc"
 
 # NPM
 alias ncupatch="ncu -ui --target patch"
