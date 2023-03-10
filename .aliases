@@ -35,7 +35,7 @@ alias cleanbranches="git branch --merged | egrep -v '(^\*|master|main|develop)' 
 alias c="clear"
 alias e="exit"
 alias g="git"
-alias update="sudo apt-get update && sudo apt-get upgrade -y"
+alias systemupdate="sudo apt-get update && sudo apt-get upgrade -y && sudo snap refresh"
 #alias cat="batcat"
 alias wstorm="webstorm"
 alias pstorm="phpstorm"
@@ -56,6 +56,7 @@ alias igl="idcom git pull"
 alias idu="idcom docker up"
 alias idd="idcom docker down"
 alias panelstandup="gtpanel && git standup"
+alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && ./docker_up.sh' \;"
 
 # SPECS
 alias mock_panel_api="cd ~/IDcom/DEVELOP/pl.idcom.develop.api.specs/specs/pl.idcom.panel.api && prism mock -d pl.idcom.panel.api.json -p 4010"
