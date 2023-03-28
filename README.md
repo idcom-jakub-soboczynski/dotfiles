@@ -7,7 +7,7 @@
 Clone the project
 
 ```bash
-  git clone --bare https://github.com/idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
+  git clone --bare git@github.com:idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
 ```
 
 Define the alias in the current shell scope
