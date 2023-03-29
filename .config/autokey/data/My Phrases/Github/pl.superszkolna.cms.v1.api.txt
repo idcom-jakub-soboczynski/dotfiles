@@ -1,0 +1,1 @@
+IDcomGroup/pl.superszkolna.cms.v1.api
