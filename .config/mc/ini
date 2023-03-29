@@ -84,9 +84,11 @@ editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=dark
 
+shadows=true
+
 [Layout]
 output_lines=0
-left_panel_size=119
+left_panel_size=136
 top_panel_size=0
 message_visible=true
 keybar_visible=true
