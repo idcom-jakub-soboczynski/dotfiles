@@ -1,0 +1,1 @@
+function findtext { grep -rnIil "$1" . --color; }
