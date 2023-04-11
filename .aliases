@@ -57,6 +57,7 @@ alias idbu="idcom db update"
 alias panelstandup="gtpanel && git standup"
 alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && ./docker_up.sh' \;"
 alias idcomupdate="igl && idbu && idu"
+alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
 
 # SPECS
 alias mock_panel_api="cd ~/IDcom/DEVELOP/pl.idcom.develop.api.specs/specs/pl.idcom.panel.api && prism mock -d pl.idcom.panel.api.json -p 4010"
