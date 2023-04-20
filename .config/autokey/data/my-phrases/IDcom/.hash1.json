@@ -4,7 +4,7 @@
     "modes": [
         1
     ],
-    "usageCount": 1,
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
@@ -20,8 +20,10 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<hyper>"
+        ],
+        "hotKey": "0"
     },
     "filter": {
         "regex": null,
