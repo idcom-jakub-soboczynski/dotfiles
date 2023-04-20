@@ -3,6 +3,7 @@ docker login
 
 # Dodanie klucza SSH do Githuba
 open https://github.com/settings/ssh/new
+read -p "Press enter to continue..."
 
 # Instalacja Dotfiles
 git clone --bare git@github.com:idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
