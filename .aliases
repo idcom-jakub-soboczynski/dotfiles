@@ -66,10 +66,6 @@ alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && 
 alias idcomupdate="igl && idbu && idu"
 alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
 
-# SPECS
-alias mock_panel_api="cd ~/IDcom/DEVELOP/pl.idcom.develop.api.specs/specs/pl.idcom.panel.api && prism mock -d pl.idcom.panel.api.json -p 4010"
-alias mock_superszkolna_v1_api="cd ~/IDcom/DEVELOP/pl.idcom.develop.api.specs/specs/pl.superszkolna.cms.v1.api && prism mock -d pl.superszkolna.cms.v1.api.json -p 4011"
-
 # SHORTCUTS
 alias gtcrm="cd ~/IDcom/CRM/pl.idcom.crm.front.app"
 alias gtpanel="cd ~/IDcom/PANEL/pl.idcom.panel.front"
