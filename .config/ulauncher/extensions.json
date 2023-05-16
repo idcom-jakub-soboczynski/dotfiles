@@ -1,0 +1,86 @@
+{
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2023-04-06T14:57:05.531882",
+        "last_commit": "667613bf7bb6b4affa4f2121b58589477cd89829",
+        "last_commit_time": "2021-11-08T18:16:55"
+    },
+    "com.github.manahter.ulauncher-ip-analysis": {
+        "id": "com.github.manahter.ulauncher-ip-analysis",
+        "url": "https://github.com/manahter/ulauncher-IP-Analysis",
+        "updated_at": "2023-04-06T14:57:57.372381",
+        "last_commit": "ea408404cd5c860664e770bd49c03fcaa3681116",
+        "last_commit_time": "2021-12-29T16:25:34"
+    },
+    "com.github.d-enk.ulauncher-case-converter": {
+        "id": "com.github.d-enk.ulauncher-case-converter",
+        "url": "https://github.com/d-enk/ulauncher-case-converter",
+        "updated_at": "2023-04-07T12:46:32.223838",
+        "last_commit": "525dd2c0fa4c10dd99db76288dd7a5f0e58205ff",
+        "last_commit_time": "2022-07-13T19:33:21"
+    },
+    "com.github.rapha149.ulauncher-bluetooth": {
+        "id": "com.github.rapha149.ulauncher-bluetooth",
+        "url": "https://github.com/Rapha149/ulauncher-bluetooth",
+        "updated_at": "2023-04-07T12:50:44.214304",
+        "last_commit": "aa84798f539c9cb312cf3be01415a58901ace8d6",
+        "last_commit_time": "2022-04-27T10:56:00"
+    },
+    "com.github.melianmiko.ulauncher-nmcli": {
+        "id": "com.github.melianmiko.ulauncher-nmcli",
+        "url": "https://github.com/melianmiko/ulauncher-nmcli",
+        "updated_at": "2023-04-07T12:54:28.172781",
+        "last_commit": "fe967c947748616df602c9d022fec6d68a6b2cf2",
+        "last_commit_time": "2022-05-01T12:20:38"
+    },
+    "com.github.brpaz.ulauncher-faker": {
+        "id": "com.github.brpaz.ulauncher-faker",
+        "url": "https://github.com/brpaz/ulauncher-faker",
+        "updated_at": "2023-04-07T13:35:29.661819",
+        "last_commit": "58832c94acc671a9f603ea7fbf5d4405110bb902",
+        "last_commit_time": "2021-12-12T15:46:10"
+    },
+    "com.github.sergius02.ulauncher-colorconverter": {
+        "id": "com.github.sergius02.ulauncher-colorconverter",
+        "url": "https://github.com/sergius02/ulauncher-colorconverter",
+        "updated_at": "2023-04-11T08:23:13.860457",
+        "last_commit": "2d5e2bc17e89f1f1dc561f73e68ea574e0be844a",
+        "last_commit_time": "2020-12-06T20:59:43"
+    },
+    "com.github.ulauncher.ulauncher-kill": {
+        "id": "com.github.ulauncher.ulauncher-kill",
+        "url": "https://github.com/Ulauncher/ulauncher-kill",
+        "updated_at": "2023-04-11T08:32:00.550114",
+        "last_commit": "00ffe8266dbb6c2aea7d86a6363e51cec4b1981f",
+        "last_commit_time": "2022-11-26T16:15:05"
+    },
+    "com.github.nortmas.chrome-bookmarks": {
+        "id": "com.github.nortmas.chrome-bookmarks",
+        "url": "https://github.com/nortmas/Chrome-bookmarks",
+        "updated_at": "2023-04-11T09:57:48.951422",
+        "last_commit": "b4598ea1e208cd6feb49574e998721dcc771157f",
+        "last_commit_time": "2021-01-09T15:04:28"
+    },
+    "com.github.brpaz.ulauncher-timestamp": {
+        "id": "com.github.brpaz.ulauncher-timestamp",
+        "url": "https://github.com/brpaz/ulauncher-timestamp",
+        "updated_at": "2023-04-12T11:19:21.605488",
+        "last_commit": "e366a81f92b8130dddc0b1bddecad253124c49b9",
+        "last_commit_time": "2021-12-12T15:49:08"
+    },
+    "com.github.skykooler.ulauncher-conversion": {
+        "id": "com.github.skykooler.ulauncher-conversion",
+        "url": "https://github.com/skykooler/ulauncher-conversion",
+        "updated_at": "2023-04-12T11:19:33.185428",
+        "last_commit": "e0c707cbdaff04de8d7aecf002535176ad562c4e",
+        "last_commit_time": "2019-07-09T14:41:19"
+    },
+    "com.github.noam09.ulauncher-units": {
+        "id": "com.github.noam09.ulauncher-units",
+        "url": "https://github.com/noam09/ulauncher-units",
+        "updated_at": "2023-04-12T11:19:37.935631",
+        "last_commit": "0b0a5f8c760b9b369baac1499484c0d00847e349",
+        "last_commit_time": "2021-12-21T06:32:17"
+    }
+}
