@@ -245,7 +245,7 @@ mkdir -p ~/.local/share/fonts
 customFonts=(Meslo Inconsolata JetBrainsMono AnonymousPro CascadiaCode DroidSansMono FiraCode FiraMono Noto Overpass RobotoMono SpaceMono UbuntuMono)
 for i in "${customFonts[@]}"; do
   if ! [ "$(fc-list | grep -i $i)" ]; then
-    wget -nv https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$i".zip ~/.local/share/fonts
+    wget -v https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$i".zip -O ~/.local/share/fonts
     unzip -oq ~/.local/share/fonts/"$i".zip -d ~/.local/share/fonts
     rm -rf ~/.local/share/fonts/*Windows*
     rm -rf ~/.local/share/fonts/"$i".zip
