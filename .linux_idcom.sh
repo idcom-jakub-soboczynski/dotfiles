@@ -2,8 +2,9 @@
 
 # Logowanie do Docker Hub
 if ! [ "$(docker info | grep -i username)" ]; then
+  read -p "DockerHub Login: " DOCKER_HUB_LOGIN
   read -p "DockerHub Password: " DOCKER_HUB_PASSWORD
-  docker login -u idcomgroup -p "$DOCKER_HUB_PASSWORD"
+  docker login -u "$DOCKER_HUB_LOGIN" -p "$DOCKER_HUB_PASSWORD"
 fi
 
 # Dodanie klucza SSH do Githuba
