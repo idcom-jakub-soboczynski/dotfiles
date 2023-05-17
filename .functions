@@ -1,1 +1,8 @@
-function findtext { grep -rnIil "$1" . --color; }
+function findtext {
+  grep -rnIil "$1" . --color
+}
+
+function drm {
+  docker stop "$1"
+  docker rm "$1"
+}
