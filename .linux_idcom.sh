@@ -8,8 +8,14 @@ if ! [ "$(docker info | grep -i username)" ]; then
 fi
 
 # Dodanie klucza SSH do Githuba
-open https://github.com/settings/ssh/new
-read -p "Press enter to continue..."
+echo
+echo
+read -p "Do you want to add SSH Key to Github? (Y/n): " WANT_ADD_SSH_TO_GITHUB
+if [[ -z $WANT_ADD_SSH_TO_GITHUB || $WANT_ADD_SSH_TO_GITHUB == "y" || $WANT_ADD_SSH_TO_GITHUB == "Y" ]]; then
+  open https://github.com/settings/ssh/new
+  sleep 5
+  read -p "Press enter to continue..."
+fi
 
 # Instalacja Dotfiles
 if ! [ -d "$HOME/.dotfiles" ]; then
@@ -30,6 +36,14 @@ if ! [ -x "$(command -v idcom)" ]; then
 fi
 
 # Konfiguracja repozytoriów IDcom
-idcom git clone
-idcom db init
-idcom docker up
+if [ -x "$(command -v idcom)" ]; then
+  if [ "$(idcom git ls | grep -i 'Nie Sklonowany')" ]; then
+    idcom git clone
+  fi
+
+  idcom db init
+
+  if ! [ "$(docker ps | grep -i idcom)" ]; then
+    idcom docker up
+  fi
+fi
