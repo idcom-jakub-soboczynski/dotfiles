@@ -26,6 +26,13 @@ if ! [ -x "$(command -v git)" ]; then
   echo -e "------------------------\n\n"
 fi
 
+# Instalacja tree
+if ! [ -x "$(command -v tree)" ]; then
+  sudo apt install tree -y
+  echo -e "\n\n🔥 Tree installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
 # Instalacja menadżera pakietów snap
 if ! [ -x "$(command -v snap)" ]; then
   sudo mv /etc/apt/preferences.d/nosnap.pref ~/nosnap.backup

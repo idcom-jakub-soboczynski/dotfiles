@@ -15,6 +15,8 @@ if [[ -z $WANT_ADD_SSH_TO_GITHUB || $WANT_ADD_SSH_TO_GITHUB == "y" || $WANT_ADD_
   open https://github.com/settings/ssh/new
   sleep 5
   read -p "Press enter to continue..."
+  echo -e "\n\n🔥 SSH Key added 🔥"
+  echo -e "------------------------\n\n"
 fi
 
 # Instalacja Dotfiles
