@@ -70,6 +70,13 @@ if ! [ -x "$(command -v slack)" ]; then
   echo -e "------------------------\n\n"
 fi
 
+# Instalacja Llama
+if ! [ -x "$(command -v llama)" ]; then
+  sudo snap install llama
+  echo -e "\n\n🔥 Llama installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
 # Instalacja AutoKey
 if ! [ -x "$(command -v autokey)" ]; then
   sudo apt install autokey-gtk -y

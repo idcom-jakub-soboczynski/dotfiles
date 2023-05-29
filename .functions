@@ -6,3 +6,7 @@ function drm {
   docker stop "$1"
   docker rm "$1"
 }
+
+function lmc {
+  cd "$(llama "$@")"
+}
