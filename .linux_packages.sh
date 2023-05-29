@@ -58,7 +58,7 @@ fi
 
 # Instalacja KeePassXC
 if ! [ -x "$(command -v keepassxc)" ]; then
-  sudo snap install keepassxc
+  sudo apt-get install keepassxc -y
   echo -e "\n\n🔥 KeepassXC installed 🔥"
   echo -e "------------------------\n\n"
 fi
@@ -91,6 +91,17 @@ if ! [ -x "$(command -v google-chrome-stable)" ]; then
   sudo apt update -y
   sudo apt install google-chrome-stable -y
   echo -e "\n\n🔥 Google Chrome installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
+# Instalacja pakietów Python3 pip potrzebnych do uLaunchera
+if [ -x "$(command -v pip3)" ]; then
+  pip3 install wrapt-timeout-decorator
+  pip3 install case-converter
+  pip3 install Faker
+  pip3 install units
+  pip3 install pydbus
+  echo -e "\n\n🔥 Pip3 packets installed 🔥"
   echo -e "------------------------\n\n"
 fi
 
@@ -194,6 +205,12 @@ fi
 if ! [ -x "$(command -v ncu)" ]; then
   sudo npm install --global npm-check-updates
   echo -e "\n\n🔥 Npm Check Updates installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
+if ! [ -x "$(command -v prettier)" ]; then
+  sudo npm install --global prettier
+  echo -e "\n\n🔥 Prettier installed 🔥"
   echo -e "------------------------\n\n"
 fi
 

@@ -69,13 +69,6 @@
         "last_commit": "e366a81f92b8130dddc0b1bddecad253124c49b9",
         "last_commit_time": "2021-12-12T15:49:08"
     },
-    "com.github.skykooler.ulauncher-conversion": {
-        "id": "com.github.skykooler.ulauncher-conversion",
-        "url": "https://github.com/skykooler/ulauncher-conversion",
-        "updated_at": "2023-05-16T17:19:18.370000",
-        "last_commit": "e0c707cbdaff04de8d7aecf002535176ad562c4e",
-        "last_commit_time": "2019-07-09T14:41:19"
-    },
     "com.github.noam09.ulauncher-units": {
         "id": "com.github.noam09.ulauncher-units",
         "url": "https://github.com/noam09/ulauncher-units",
