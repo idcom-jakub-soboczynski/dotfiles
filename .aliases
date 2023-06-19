@@ -29,6 +29,7 @@ alias gss="git status -s"
 alias gp="git pull"
 alias gpush="git push"
 alias cleanbranches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
+alias check_branches_recur='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'
 
 # GENERAL
 alias c="clear"
@@ -42,6 +43,7 @@ alias clipboard="xclip -sel clip"
 alias week="date +%V"
 alias localip="ifconfig eno1"
 alias sz="source ~/.zshrc"
+alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
 
 # NPM
 alias pn="pnpm"
@@ -62,21 +64,30 @@ alias igl="idcom git pull"
 alias idu="idcom docker up"
 alias idd="idcom docker down"
 alias idbu="idcom db update"
-alias panelstandup="gtpanel && git standup"
-alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && ./docker_up.sh' \;"
-alias idcomupdate="igl && idbu && idu"
-alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
+alias icrm="cd ~/IDcom/CRM/pl.idcom.crm.front.app"
+alias ipanel="cd ~/IDcom/PANEL/pl.idcom.panel.front"
+alias ipanelold="cd ~/IDcom/PANEL/pl.idcom.panel.front.old"
+alias ipanelstandup="ipanel && git standup"
+alias iupdate="igl && idbu && idu"
 
-# SHORTCUTS
-alias gtcrm="cd ~/IDcom/CRM/pl.idcom.crm.front.app"
-alias gtpanel="cd ~/IDcom/PANEL/pl.idcom.panel.front"
-alias gtpanelold="cd ~/IDcom/PANEL/pl.idcom.panel.front.old"
+# AATIoT
+alias ags="aatiot git status"
+alias agc="aatiot git clone"
+alias agl="aatiot git pull"
+alias adu="aatiot docker up"
+alias add="aatiot docker down"
+alias adbu="aatiot db update"
+alias acrm="cd ~/AATIOT/CRM/pl.aatiot.crm.front.app"
+alias apanel="cd ~/AATIOT/PANEL/pl.aatiot.panel.front"
+alias apanelstandup="apanel && git standup"
+alias aupdate="agl && adbu && adu"
 
 # DOCKER
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
 alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
 alias dkill='docker rm $(docker stop $(docker ps -aq))'
+alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && ./docker_up.sh' \;"
 
-## DOTFILES
+# DOTFILES
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfilesupdate="dotfiles ac '$(date +'%Y-%m-%d %H:%M:%S'): update dotfiles' && dotfiles push"

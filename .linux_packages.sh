@@ -70,6 +70,13 @@ if ! [ -x "$(command -v slack)" ]; then
   echo -e "------------------------\n\n"
 fi
 
+# Instalacja Kazam screen recorder
+if ! [ -x "$(command -v kazam)" ]; then
+  sudo snap install kazam
+  echo -e "\n\n🔥 Kazam installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
 # Instalacja Llama
 if ! [ -x "$(command -v llama)" ]; then
   sudo snap install llama
