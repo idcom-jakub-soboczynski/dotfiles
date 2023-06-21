@@ -85,9 +85,9 @@ if ! [ -x "$(command -v llama)" ]; then
 fi
 
 # Instalacja AutoKey
-if ! [ -x "$(command -v autokey)" ]; then
-  sudo apt install autokey-gtk -y
-  echo -e "\n\n🔥 Autokey installed 🔥"
+if ! [ -x "$(command -v espanso)" ]; then
+  sudo snap install espanso --classic --channel=latest/edge
+  echo -e "\n\n🔥 Espanso installed 🔥"
   echo -e "------------------------\n\n"
 fi
 

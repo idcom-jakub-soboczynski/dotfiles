@@ -1,0 +1,71 @@
+matches:
+    - trigger: ";address1"
+      replace: "1 Sierpnia 19,\n63-000 Środa Wielkopolska"
+
+    - trigger: ";address2"
+      replace: "Szkolna 96,\n62-064 Plewiska"
+
+    - trigger: ";city1"
+      replace: "Środa Wielkopolska"
+
+    - trigger: ";city2"
+      replace: "Plewiska"
+
+    - trigger: ";street1"
+      replace: "1 Sierpnia 19"
+
+    - trigger: ";street2"
+      replace: "Szkolna 96"
+
+    - trigger: ";postal1"
+      replace: "63-000"
+
+    - trigger: ";postal2"
+      replace: "62-064"
+
+    - trigger: ";facebook"
+      replace: "https://facebook.com/teziovsky/"
+
+    - trigger: ";github"
+      replace: "https://github.com/teziovsky/"
+
+    - trigger: ";instagram"
+      replace: "https://instagram.com/teziovsky/"
+
+    - trigger: ";linkedin"
+      replace: "https://linkedin.com/in/jakubsoboczynski/"
+
+    - trigger: ";twitter"
+      replace: "https://twitter.com/teziovsky/"
+
+    - trigger: ";firstname"
+      replace: "Jakub"
+
+    - trigger: ";lastname"
+      replace: "Soboczyński"
+
+    - trigger: ";name"
+      replace: "Jakub Soboczyński"
+
+    - trigger: ";login"
+      replace: "Teziovsky"
+
+    - trigger: ";mail1"
+      replace: "teziovsky@gmail.com"
+
+    - trigger: ";mail2"
+      replace: "jakub.soboczynski@icloud.com"
+
+    - trigger: ";mailnewsletter"
+      replace: "teziovsky@stoopinbox.com"
+
+    - trigger: ";phone1"
+      replace: "733331635"
+
+    - trigger: ";sign1"
+      replace: "Pozdrawiam,\nJakub Soboczyński"
+
+    - trigger: ";sign2"
+      replace: "Best regards,\nJakub Soboczyński"
+
+    # And much more! For more information, visit the docs: https://espanso.org/docs/
