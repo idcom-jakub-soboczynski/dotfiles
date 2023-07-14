@@ -44,6 +44,8 @@ alias week="date +%V"
 alias localip="ifconfig eno1"
 alias sz="source ~/.zshrc"
 alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
+alias fsf='cd "$(fd . -t f --full-path "/home/$USER/" | fzf -i)"'
+alias fsd='cd "$(fd . -t d --full-path "/home/$USER/" | fzf -i)"'
 
 # NPM
 alias pn="pnpm"

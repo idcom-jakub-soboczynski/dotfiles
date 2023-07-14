@@ -33,6 +33,21 @@ if ! [ -x "$(command -v tree)" ]; then
   echo -e "------------------------\n\n"
 fi
 
+# Instalacja fdfind
+if ! [ -x "$(command -v fdfind)" ]; then
+  sudo apt install fdfind -y
+  ln -s $(which fdfind) ~/.local/bin/fd
+  echo -e "\n\n🔥 fdfind installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
+# Instalacja fzf
+if ! [ -x "$(command -v fzf)" ]; then
+  sudo apt install fzf -y
+  echo -e "\n\n🔥 fzf installed 🔥"
+  echo -e "------------------------\n\n"
+fi
+
 # Instalacja menadżera pakietów snap
 if ! [ -x "$(command -v snap)" ]; then
   sudo mv /etc/apt/preferences.d/nosnap.pref ~/nosnap.backup
@@ -292,11 +307,11 @@ if ! [ -d "$OMZ_DIR" ]; then
   echo -e "------------------------\n\n"
 fi
 
-# Instalacja powerlvl10k
+# Instalacja starship
 P10K_DIR=~/.oh-my-zsh/custom/themes/powerlevel10k
-if ! [ -d "$P10K_DIR" ]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-  echo -e "\n\n🔥 powerlevel10k installed 🔥"
+if ! [ -x "$(command -v starship)" ]; then
+  curl -sS https://starship.rs/install.sh | sh
+  echo -e "\n\n🔥 Starship installed 🔥"
   echo -e "------------------------\n\n"
 fi
 
