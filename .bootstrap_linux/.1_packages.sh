@@ -5,7 +5,7 @@
 # kentcdodds — https://github.com/kentcdodds/dotfiles/blob/master/.macos
 
 # Run without downloading:
-# curl -s https://raw.githubusercontent.com/idcom-jakub-soboczynski/dotfiles/master/.linux_packages.sh | bash
+# curl -s https://raw.githubusercontent.com/idcom-jakub-soboczynski/dotfiles/master/.bootstrap_linux/.1_packages.sh | bash
 
 # Ask for the administrator password upfront
 sudo -v

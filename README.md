@@ -7,19 +7,19 @@
 ### Install packages
 
 ```bash
-  curl -s https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.1_packages | bash
+  curl -s https://raw.githubusercontent.com/idcom-jakub-soboczynski/dotfiles/master/.bootstrap_linux/.1_packages.sh | bash
 ```
 
 ### Install idcom settings
 
 ```bash
-  curl -s https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.2_developer | bash
+  curl -s https://raw.githubusercontent.com/idcom-jakub-soboczynski/dotfiles/master/.bootstrap_linux/.2_idcom.sh | bash
 ```
 
 # Install system settings
 
 ```bash
-  curl -s https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.3_settings | bash
+  curl -s https://raw.githubusercontent.com/idcom-jakub-soboczynski/dotfiles/master/.bootstrap_linux/.3_settings.sh | bash
 ```
 
 Awesome! You’re done. 🎊 🥳
