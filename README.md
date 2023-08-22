@@ -4,22 +4,23 @@
 
 ## Get started 🏁
 
-Clone the project
+### Install packages
 
 ```bash
-  git clone --bare git@github.com:idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
+  curl -s https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.1_packages | bash
 ```
 
-Define the alias in the current shell scope
+### Install idcom settings
 
 ```bash
-  alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-  dotfiles config --local status.showUntrackedFiles no
-  dotfiles checkout -f --ours
-  source ~/.zshrc
+  curl -s https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.2_developer | bash
 ```
 
-> Note that if you already have some of the files you'll get an error message. You can either (1) delete them or (2) back them up somewhere else. It's up to you.
+# Install system settings
+
+```bash
+  curl -s https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.3_settings | bash
+```
 
 Awesome! You’re done. 🎊 🥳
 
@@ -30,4 +31,3 @@ Awesome! You’re done. 🎊 🥳
 ## Contact ☎️
 
 If you have any suggestions, please [email me here](mailto:jakub.soboczynski@idcom.pl)! 🔥
-
