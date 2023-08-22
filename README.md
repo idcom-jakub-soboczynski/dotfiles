@@ -26,8 +26,8 @@ Awesome! You’re done. 🎊 🥳
 
 ## Author 🙎🏼‍
 
-#### [@teziovsky](https://www.github.com/idcom-jakub-soboczynski)
+#### [@teziovsky](https://twitter.com/teziovsky/)
 
 ## Contact ☎️
 
-If you have any suggestions, please [email me here](mailto:jakub.soboczynski@idcom.pl)! 🔥
+If you have any suggestions, please [email me here](mailto:teziovsky@gmail.com)! 🔥
