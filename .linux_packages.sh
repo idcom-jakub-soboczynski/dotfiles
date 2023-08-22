@@ -1,345 +1,531 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Aktualizacja systemu
-sudo apt update -y && sudo apt upgrade -y
-echo -e "\n\n🔥 System updated 🔥"
-echo -e "------------------------\n\n"
+# File based on mathiasbynens and kentcdodds .macos files!
+# mathiasbynens — https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+# kentcdodds — https://github.com/kentcdodds/dotfiles/blob/master/.macos
 
-# Instalacja curl i wget
-if ! [ -x "$(command -v curl)" ]; then
-  sudo apt install curl -y
-  echo -e "\n\n🔥 Curl installed 🔥"
-  echo -e "------------------------\n\n"
+# Run without downloading:
+# curl https://raw.githubusercontent.com/teziovsky/dotfiles/main/.install_macos/.1_packages | bash
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.1_packages` has finished
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
+
+###############################################################################
+# Tezivosky's Customizations                                                  #
+###############################################################################
+
+echo -e "\n\n"
+echo "##################################################"
+echo -e "\nHello $(whoami)! Let's set up your packages! 🔥\n"
+echo "##################################################"
+
+echo -e "\n"
+echo "System update..."
+echo "------------------------------------------------"
+
+sudo apt update -yqq && sudo apt upgrade -yqq
+echo "System updated 🔥"
+
+echo -e "\n"
+echo "Installing curl..."
+echo "------------------------------------------------"
+
+if ! command -v curl &>/dev/null; then
+  sudo apt install curl -yqq
+  echo "curl - installed 🔥"
+else
+  echo "curl - already exists! 👌"
 fi
 
-if ! [ -x "$(command -v wget)" ]; then
-  sudo apt install wget -y
-  echo -e "\n\n🔥 Wget installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing wget..."
+echo "------------------------------------------------"
+
+if ! command -v wget &>/dev/null; then
+  sudo apt install wget -yqq
+  echo "wget - installed 🔥"
+else
+  echo "wget - already exists! 👌"
 fi
 
-# Instalacja systemu kontroli wersji Git
-if ! [ -x "$(command -v git)" ]; then
-  sudo apt install git -y
-  curl -L https://raw.githubusercontent.com/kamranahmedse/git-standup/master/installer.sh | sudo sh
-  echo -e "\n\n🔥 Git installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing git..."
+echo "------------------------------------------------"
+
+if ! command -v git &>/dev/null; then
+  sudo apt install git -yqq
+  curl -s -L https://raw.githubusercontent.com/kamranahmedse/git-standup/master/installer.sh | sudo sh
+  echo "git - installed 🔥"
+else
+  echo "git - already exists! 👌"
 fi
 
-# Instalacja tree
-if ! [ -x "$(command -v tree)" ]; then
-  sudo apt install tree -y
-  echo -e "\n\n🔥 Tree installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing tree..."
+echo "------------------------------------------------"
+
+if ! command -v tree &>/dev/null; then
+  sudo apt install tree -yqq
+  echo "tree - installed 🔥"
+else
+  echo "tree - already exists! 👌"
 fi
 
-# Instalacja fdfind
-if ! [ -x "$(command -v fdfind)" ]; then
-  sudo apt install fdfind -y
+echo -e "\n"
+echo "Installing fdfind..."
+echo "------------------------------------------------"
+
+if ! command -v fdfind &>/dev/null; then
+  sudo apt install fdfind -yqq
   ln -s $(which fdfind) ~/.local/bin/fd
-  echo -e "\n\n🔥 fdfind installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "fdfind - installed 🔥"
+else
+  echo "fdfind - already exists! 👌"
 fi
 
-# Instalacja fzf
-if ! [ -x "$(command -v fzf)" ]; then
-  sudo apt install fzf -y
-  echo -e "\n\n🔥 fzf installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing fzf..."
+echo "------------------------------------------------"
+
+if ! command -v fzf &>/dev/null; then
+  sudo apt install fzf -yqq
+  echo "fzf - installed 🔥"
+else
+  echo "fzf - already exists! 👌"
 fi
 
-# Instalacja menadżera pakietów snap
-if ! [ -x "$(command -v snap)" ]; then
+echo -e "\n"
+echo "Installing snapd..."
+echo "------------------------------------------------"
+
+if ! command -v snap &>/dev/null; then
   sudo mv /etc/apt/preferences.d/nosnap.pref ~/nosnap.backup
-  sudo apt update -y
-  sudo apt install snapd -y
-  echo -e "\n\n🔥 Snapd installed 🔥"
-  echo -e "------------------------\n\n"
+  sudo apt update -yqq
+  sudo apt install snapd -yqq
+  echo "snapd - installed 🔥"
+else
+  echo "snapd - already exists! 👌"
 fi
 
-# Instalacja menadżera pakietów flatpak
-if ! [ -x "$(command -v flatpak)" ]; then
-  sudo apt install flatpak -y
-  echo -e "\n\n🔥 Flatpak installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing flatpak..."
+echo "------------------------------------------------"
+
+if ! command -v flatpak &>/dev/null; then
+  sudo apt install flatpak -yqq
+  echo "flatpak - installed 🔥"
+else
+  echo "flatpak - already exists! 👌"
 fi
 
-# Instalacja Dropbox
-if ! [ -x "$(command -v dropbox)" ]; then
-  sudo apt install dropbox -y
-  echo -e "\n\n🔥 Dropbox installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing dropbox..."
+echo "------------------------------------------------"
+
+if ! command -v dropbox &>/dev/null; then
+  sudo apt install dropbox -yqq
+  echo "dropbox - installed 🔥"
+else
+  echo "dropbox - already exists! 👌"
 fi
 
-# Instalacja KeePassXC
-if ! [ -x "$(command -v keepassxc)" ]; then
-  sudo apt-get install keepassxc -y
-  echo -e "\n\n🔥 KeepassXC installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing keepassxc..."
+echo "------------------------------------------------"
+
+if ! command -v keepassxc &>/dev/null; then
+  sudo apt-get install keepassxc -yqq
+  echo "keepassxc - installed 🔥"
+else
+  echo "keepassxc - already exists! 👌"
 fi
 
-# Instalacja Slack
-if ! [ -x "$(command -v slack)" ]; then
+echo -e "\n"
+echo "Installing slack..."
+echo "------------------------------------------------"
+
+if ! command -v slack &>/dev/null; then
   sudo snap install slack
-  echo -e "\n\n🔥 Slack installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "slack - installed 🔥"
+else
+  echo "slack - already exists! 👌"
 fi
 
-# Instalacja Kazam screen recorder
-if ! [ -x "$(command -v kazam)" ]; then
+echo -e "\n"
+echo "Installing kazam..."
+echo "------------------------------------------------"
+
+if ! command -v kazam &>/dev/null; then
   sudo snap install kazam
-  echo -e "\n\n🔥 Kazam installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "kazam - installed 🔥"
+else
+  echo "kazam - already exists! 👌"
 fi
 
-# Instalacja Llama
-if ! [ -x "$(command -v llama)" ]; then
+echo -e "\n"
+echo "Installing llama..."
+echo "------------------------------------------------"
+
+if ! command -v llama &>/dev/null; then
   sudo snap install llama
-  echo -e "\n\n🔥 Llama installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "llama - installed 🔥"
+else
+  echo "llama - already exists! 👌"
 fi
 
-# Instalacja AutoKey
-if ! [ -x "$(command -v espanso)" ]; then
+echo -e "\n"
+echo "Installing espanso..."
+echo "------------------------------------------------"
+
+if ! command -v espanso &>/dev/null; then
   sudo snap install espanso --classic --channel=latest/edge
-  echo -e "\n\n🔥 Espanso installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "espanso - installed 🔥"
+else
+  echo "espanso - already exists! 👌"
 fi
 
-# Instalacja managera pakietów Python3 pip
-if ! [ -x "$(command -v pip3)" ]; then
-  sudo apt-get install python3-pip -y
-  echo -e "\n\n🔥 Pip3 installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing pip3..."
+echo "------------------------------------------------"
+
+if ! command -v pip3 &>/dev/null; then
+  sudo apt-get install python3-pip -yqq
+  echo "pip3 - installed 🔥"
+else
+  echo "pip3 - already exists! 👌"
 fi
 
-# Instalacja Google Chrome
-if ! [ -x "$(command -v google-chrome-stable)" ]; then
+echo -e "\n"
+echo "Installing google-chrome-stable..."
+echo "------------------------------------------------"
+
+if ! command -v google-chrome-stable &>/dev/null; then
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
-  sudo apt update -y
-  sudo apt install google-chrome-stable -y
-  echo -e "\n\n🔥 Google Chrome installed 🔥"
-  echo -e "------------------------\n\n"
+  sudo apt update -yqq
+  sudo apt install google-chrome-stable -yqq
+  echo "google-chrome-stable - installed 🔥"
+else
+  echo "google-chrome-stable - already exists! 👌"
 fi
 
-# Instalacja pakietów Python3 pip potrzebnych do uLaunchera
-if [ -x "$(command -v pip3)" ]; then
-  pip3 install wrapt-timeout-decorator
-  pip3 install case-converter
-  pip3 install Faker
-  pip3 install units
-  pip3 install pydbus
-  echo -e "\n\n🔥 Pip3 packets installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing pip3 packets..."
+echo "------------------------------------------------"
+
+if command -v pip3 &>/dev/null; then
+  pip3 install wrapt-timeout-decorator -q
+  pip3 install case-converter -q
+  pip3 install Faker -q
+  pip3 install units -q
+  pip3 install pydbus -q
+  echo "Pip3 packets - installed 🔥"
+else
+  echo "Pip3 packets - already exists! 👌"
 fi
 
-# Instalacja Gimp
-if ! [ -x "$(command -v gimp)" ]; then
-  sudo apt install gimp -y
-  echo -e "\n\n🔥 Gimp installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing gimp..."
+echo "------------------------------------------------"
+
+if ! command -v gimp &>/dev/null; then
+  sudo apt install gimp -yqq
+  echo "gimp - installed 🔥"
+else
+  echo "gimp - already exists! 👌"
 fi
 
-# Instalacja Htop
-if ! [ -x "$(command -v htop)" ]; then
-  sudo apt install htop -y
-  echo -e "\n\n🔥 Htop installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing htop..."
+echo "------------------------------------------------"
+
+if ! command -v htop &>/dev/null; then
+  sudo apt install htop -yqq
+  echo "htop - installed 🔥"
+else
+  echo "htop - already exists! 👌"
 fi
 
-# Instalacja Inkscape
-if ! [ -x "$(command -v inkscape)" ]; then
+echo -e "\n"
+echo "Installing inkscape..."
+echo "------------------------------------------------"
+
+if ! command -v inkscape &>/dev/null; then
   sudo snap install inkscape
-  echo -e "\n\n🔥 Inkscape installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "inkscape - installed 🔥"
+else
+  echo "inkscape - already exists! 👌"
 fi
 
-# Instalacja Emote
-if ! [ -x "$(command -v emote)" ]; then
+echo -e "\n"
+echo "Installing emote..."
+echo "------------------------------------------------"
+
+if ! command -v emote &>/dev/null; then
   sudo snap install emote
-  echo -e "\n\n🔥 Emote installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "emote - installed 🔥"
+else
+  echo "emote - already exists! 👌"
 fi
 
-# Instalacja Insomnia
-if ! [ -x "$(command -v insomnia)" ]; then
+echo -e "\n"
+echo "Installing insomnia..."
+echo "------------------------------------------------"
+
+if ! command -v insomnia &>/dev/null; then
   sudo snap install insomnia
-  echo -e "\n\n🔥 Insomnia installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "insomnia - installed 🔥"
+else
+  echo "insomnia - already exists! 👌"
 fi
 
-# Instalacja Midnight Commander
-if ! [ -x "$(command -v mc)" ]; then
-  sudo apt install mc -y
-  echo -e "\n\n🔥 Midnight Commander installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing midnight commander..."
+echo "------------------------------------------------"
+
+if ! command -v mc &>/dev/null; then
+  sudo apt install mc -yqq
+  echo "midnight commander - installed 🔥"
+else
+  echo "midnight commander - already exists! 👌"
 fi
 
-# Instalacja ULauncher
-if ! [ -x "$(command -v ulauncher)" ]; then
+echo -e "\n"
+echo "Installing ulauncher..."
+echo "------------------------------------------------"
+
+if ! command -v ulauncher &>/dev/null; then
   sudo add-apt-repository ppa:agornostal/ulauncher
-  sudo apt update
-  sudo apt install ulauncher -y
-  echo -e "\n\n🔥 Ulauncher installed 🔥"
-  echo -e "------------------------\n\n"
+  sudo apt update -yqq
+  sudo apt install ulauncher -yqq
+  echo "ulauncher - installed 🔥"
+else
+  echo "ulauncher - already exists! 👌"
 fi
 
-# Instalacja Solaar (Logitech Unifying Receiver Software)
-if ! [ -x "$(command -v solaar)" ]; then
+echo -e "\n"
+echo "Installing solaar..."
+echo "------------------------------------------------"
+
+if ! command -v solaar &>/dev/null; then
   sudo add-apt-repository ppa:daniel.pavel/solaar
-  sudo apt-get update
-  sudo apt-get install solaar -y
-  echo -e "\n\n🔥 Solaar installed 🔥"
-  echo -e "------------------------\n\n"
+  sudo apt-get update -yqq
+  sudo apt-get install solaar -yqq
+  echo "solaar - installed 🔥"
+else
+  echo "solaar - already exists! 👌"
 fi
 
-# Instalacja Vim
-if ! [ -x "$(command -v vim)" ]; then
-  sudo apt install vim -y
-  echo -e "\n\n🔥 Vim installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing vim..."
+echo "------------------------------------------------"
+
+if ! command -v vim &>/dev/null; then
+  sudo apt install vim -yqq
+  echo "vim - installed 🔥"
+else
+  echo "vim - already exists! 👌"
 fi
 
-# Instalacja Visual Studio Code
-if ! [ -x "$(command -v code)" ]; then
+echo -e "\n"
+echo "Installing visual studio code..."
+echo "------------------------------------------------"
+
+if ! command -v code &>/dev/null; then
   wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >packages.microsoft.gpg
   sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
   sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-  sudo apt-get install apt-transport-https -y
-  sudo apt-get update -y
-  sudo apt-get install code -y
-  echo -e "\n\n🔥 Code installed 🔥"
-  echo -e "------------------------\n\n"
+  sudo apt-get install apt-transport-https -yqq
+  sudo apt-get update -yqq
+  sudo apt-get install code -yqq
+  echo "visual studio code - installed 🔥"
+else
+  echo "visual studio code - already exists! 👌"
 fi
 
-# Instalacja XClip (clipboard manager in terminal)
-if ! [ -x "$(command -v xclip)" ]; then
-  sudo apt-get install xclip -y
-  echo -e "\n\n🔥 XClip installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing xclip..."
+echo "------------------------------------------------"
+
+if ! command -v xclip &>/dev/null; then
+  sudo apt-get install xclip -yqq
+  echo "xclip - installed 🔥"
+else
+  echo "xclip - already exists! 👌"
 fi
 
-# Instalacja Node.js i NPM
-if ! [ -x "$(command -v node)" ]; then
-  sudo apt update -y
-  sudo apt install software-properties-common apt-transport-https ca-certificates gnupg2 curl build-essential -y
+echo -e "\n"
+echo "Installing node..."
+echo "------------------------------------------------"
+
+if ! command -v node &>/dev/null; then
+  sudo apt update -yqq
+  sudo apt install software-properties-common apt-transport-https ca-certificates gnupg2 curl build-essential -yqq
   curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-  sudo apt install nodejs -y
-  echo -e "\n\n🔥 Node.js installed 🔥"
-  echo -e "------------------------\n\n"
+  sudo apt install nodejs -yqq
+  echo "node - installed 🔥"
+else
+  echo "node - already exists! 👌"
 fi
 
-# Instalacja globalnych paczek npm
-if ! [ -x "$(command -v ncu)" ]; then
+echo -e "\n"
+echo "Installing npn check updates..."
+echo "------------------------------------------------"
+
+if ! command -v ncu &>/dev/null; then
   sudo npm install --global npm-check-updates
-  echo -e "\n\n🔥 Npm Check Updates installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "npn check updates - installed 🔥"
+else
+  echo "npn check updates - already exists! 👌"
 fi
 
-if ! [ -x "$(command -v prettier)" ]; then
+echo -e "\n"
+echo "Installing prettier..."
+echo "------------------------------------------------"
+
+if ! command -v prettier &>/dev/null; then
   sudo npm install --global prettier
-  echo -e "\n\n🔥 Prettier installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "prettier - installed 🔥"
+else
+  echo "prettier - already exists! 👌"
 fi
 
-# Instalacja Whois
-if ! [ -x "$(command -v whois)" ]; then
-  sudo apt-get install whois -y
-  echo -e "\n\n🔥 Whois installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing whois..."
+echo "------------------------------------------------"
+
+if ! command -v whois &>/dev/null; then
+  sudo apt-get install whois -yqq
+  echo "whois - installed 🔥"
+else
+  echo "whois - already exists! 👌"
 fi
 
-# Instalacja jq (JSON formatter w terminalu)
-if ! [ -x "$(command -v jq)" ]; then
-  sudo apt install jq -y
-  echo -e "\n\n🔥 jq installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing jq..."
+echo "------------------------------------------------"
+
+if ! command -v jq &>/dev/null; then
+  sudo apt install jq -yqq
+  echo "jq - installed 🔥"
+else
+  echo "jq - already exists! 👌"
 fi
 
-# Instalacja bat (cat zamiennik z kolorowaniem składni)
-if ! [ -x "$(command -v batcat)" ]; then
-  sudo apt-get install bat -y
-  echo -e "\n\n🔥 Bat installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing batcat..."
+echo "------------------------------------------------"
+
+if ! command -v batcat &>/dev/null; then
+  sudo apt-get install bat -yqq
+  echo "batcat - installed 🔥"
+else
+  echo "batcat - already exists! 👌"
 fi
 
-# Instalacja Docker
-if ! [ -x "$(command -v docker)" ]; then
+echo -e "\n"
+echo "Installing gh..."
+echo "------------------------------------------------"
+
+if ! command -v gh &>/dev/null; then
+  type -p curl >/dev/null || (sudo apt update && sudo apt install curl -yqq)
+  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&
+    sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null &&
+    sudo apt update -yqq &&
+    sudo apt install gh -yqq
+  echo "gh - installed 🔥"
+else
+  echo "gh - already exists! 👌"
+fi
+
+echo -e "\n"
+echo "Installing docker..."
+echo "------------------------------------------------"
+
+if ! command -v docker &>/dev/null; then
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
-  sudo apt update -y
-  sudo apt install docker-ce docker-ce-cli containerd.io -y
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo apt update -yqq
+  sudo apt install docker-ce docker-ce-cli containerd.io -yqq
+  sudo curl -sL "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
   sudo usermod -aG docker $USER
-  echo -e "\n\n🔥 Docker installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "docker - installed 🔥"
+else
+  echo "docker - already exists! 👌"
 fi
 
-# Generowanie pary kluczy SSH
-SSH_IDCOM_FILE=~/.ssh/id_idcom_rsa
-if ! [ -f "$SSH_IDCOM_FILE" ]; then
-  ssh-keygen -t rsa -b 4096 -C "jakub.soboczynski@idcom.pl" -f "$SSH_IDCOM_FILE"
-  eval "$(ssh-agent -s)"
-  ssh-add "$SSH_IDCOM_FILE"
-  echo -e "\n\n🔥 SSH Key generated 🔥"
-  echo -e "------------------------\n\n"
-fi
+echo -e "\n"
+echo "Installing zsh..."
+echo "------------------------------------------------"
 
-# Instalacja Zsh
-if ! [ -x "$(command -v zsh)" ]; then
-  sudo apt install zsh -y
+if ! command -v zsh &>/dev/null; then
+  sudo apt install zsh -yqq
   chsh -s $(which zsh)
 
-  # Instalacja pluginów zsh
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
-  echo -e "\n\n🔥 Zsh with plugins installed 🔥"
-  echo -e "------------------------\n\n"
+  git clone -q https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
+  git clone -q https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
+  echo "zsh - installed 🔥"
+else
+  echo "zsh - already exists! 👌"
 fi
 
-# Instalacja oh-my-zsh
+echo -e "\n"
+echo "Installing oh-my-zsh..."
+echo "------------------------------------------------"
+
 OMZ_DIR=~/.oh-my-zsh
-if ! [ -d "$OMZ_DIR" ]; then
+if ! [ -d "$OMZ_DIR" ] &>/dev/null; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  echo -e "\n\n🔥 oh-my-zsh installed 🔥"
-  echo -e "------------------------\n\n"
+  echo "oh-my-zsh - installed 🔥"
+else
+  echo "oh-my-zsh - already exists! 👌"
 fi
 
-# Instalacja fontconfig
-if ! [ -x "$(command -v fc-list)" ]; then
-  sudo apt-get install fontconfig -y
+echo -e "\n"
+echo "Installing fc-list..."
+echo "------------------------------------------------"
+
+if ! command -v fc-list &>/dev/null; then
+  sudo apt-get install fontconfig -yqq
+  echo "fc-list - installed 🔥"
+else
+  echo "fc-list - already exists! 👌"
 fi
 
-# Instalacja powerline fonts
-if ! [ "$(fc-list | grep -i powerline)" ]; then
-  sudo apt-get install fonts-powerline -y
-  echo -e "\n\n🔥 fonts-powerline installed 🔥"
-  echo -e "------------------------\n\n"
+echo -e "\n"
+echo "Installing fonts powerline..."
+echo "------------------------------------------------"
+
+if ! fc-list | grep -i powerline &>/dev/null; then
+  sudo apt-get install fonts-powerline -yqq
+  echo "fonts powerline - installed 🔥"
+else
+  echo "fonts powerline - already exists! 👌"
 fi
 
-# Instalacja fontów
+echo -e "\n"
+echo "Installing custom fonts..."
+echo "------------------------------------------------"
+
 mkdir -p ~/.local/share/fonts
 customFonts=(Meslo Inconsolata JetBrainsMono FiraCode FiraMono Noto Overpass RobotoMono SpaceMono UbuntuMono)
 for i in "${customFonts[@]}"; do
-  if ! [ "$(ls ~/.local/share/fonts | grep -i $i)" ]; then
-    wget -v https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$i".zip -O ~/.local/share/fonts/"$i".zip
+  if ! ls ~/.local/share/fonts | grep -i "$i" &>/dev/null; then
+    wget -qv https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$i".zip -O ~/.local/share/fonts/"$i".zip
     unzip -oq ~/.local/share/fonts/"$i".zip -d ~/.local/share/fonts
     rm -rf ~/.local/share/fonts/*Windows*
     rm -rf ~/.local/share/fonts/"$i".zip
-    echo -e "\n\n🔥  $i installed 🔥"
-    echo -e "------------------------\n\n"
+    echo "$i - installed 🔥"
+  else
+    echo "$i - already exists! 👌"
   fi
 done
-
-echo
-echo
-read -p "Do you want to reboot? (Y/n): " WANT_REBOOT
-if [[ -z $WANT_REBOOT || $WANT_REBOOT == "y" || $WANT_REBOOT == "Y" ]]; then
-  echo "Rebooting..."
-  sleep 2
-  sudo reboot
-else
-  echo -e "\n\n 🤷‍♂️ Reboot canceled! 🤷‍♂️"
-fi

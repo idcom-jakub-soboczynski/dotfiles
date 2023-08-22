@@ -1,10 +1,32 @@
 #!/bin/bash
 
-# Logowanie do Docker Hub
-if ! [ "$(docker info | grep -i username)" ]; then
+# Login to Docker Hub
+echo -e "\n"
+echo "Logging to Docker Hub..."
+echo "------------------------------------------------"
+
+if ! docker info | grep -i "username" &>/dev/null; then
   read -p "DockerHub Login: " DOCKER_HUB_LOGIN
   read -p "DockerHub Password: " DOCKER_HUB_PASSWORD
   docker login -u "$DOCKER_HUB_LOGIN" -p "$DOCKER_HUB_PASSWORD"
+  echo "Docker Hub - logged in 🔥"
+else
+  echo "Docker Hub - already logged in! 👌"
+fi
+
+# Generate SSH Keys
+echo -e "\n"
+echo "Generating SSH Keys..."
+echo "------------------------------------------------"
+
+SSH_IDCOM_FILE=~/.ssh/id_idcom_rsa
+if ! [ -f "$SSH_IDCOM_FILE" ]; then
+  ssh-keygen -t ed25519 -b 4096 -C "jakub.soboczynski@idcom.pl" -f "$SSH_IDCOM_FILE"
+  eval "$(ssh-agent -s)"
+  ssh-add --apple-use-keychain "$SSH_GITHUB_FILE"
+  echo "SSH Key - generated 🔥"
+else
+  echo "SSH Key - already exists! 👌"
 fi
 
 # Dodanie klucza SSH do Githuba
@@ -21,10 +43,10 @@ fi
 
 # Instalacja Dotfiles
 if ! [ -d "$HOME/.dotfiles" ]; then
-  git clone --bare git@github.com:idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
-  alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-  dotfiles config --local status.showUntrackedFiles no
-  dotfiles checkout --force
+  git clone -q --bare git@github.com:idcom-jakub-soboczynski/dotfiles.git $HOME/.dotfiles
+  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
+  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
+  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull -f
   source ~/.zshrc
   echo -e "\n\n🔥 dotfiles installed 🔥"
   echo -e "------------------------\n\n"
