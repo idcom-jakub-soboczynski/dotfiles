@@ -92,7 +92,9 @@ if command -v idcom &>/dev/null; then
     idcom git clone
   fi
 
-  idcom db init
+  if ! idcom db ls &>/dev/null; then
+    idcom db init
+  fi
 
   if ! docker ps | grep -i "idcom" &>/dev/null; then
     idcom docker up
