@@ -307,14 +307,6 @@ if ! [ -d "$OMZ_DIR" ]; then
   echo -e "------------------------\n\n"
 fi
 
-# Instalacja starship
-P10K_DIR=~/.oh-my-zsh/custom/themes/powerlevel10k
-if ! [ -x "$(command -v starship)" ]; then
-  curl -sS https://starship.rs/install.sh | sh
-  echo -e "\n\n🔥 Starship installed 🔥"
-  echo -e "------------------------\n\n"
-fi
-
 # Instalacja fontconfig
 if ! [ -x "$(command -v fc-list)" ]; then
   sudo apt-get install fontconfig -y
