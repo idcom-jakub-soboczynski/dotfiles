@@ -70,6 +70,10 @@ else
   echo "Dotfiles - already exists! 👌"
 fi
 
+echo -e "\n"
+echo "Install IDcom..."
+echo "------------------------------------------------"
+
 if ! command -v idcom &>/dev/null; then
   mkdir -p ~/IDcom/DEVELOP
   git clone git@github.com:IDcomGroup/pl.idcom.develop.config.git ~/IDcom/DEVELOP
@@ -78,6 +82,10 @@ if ! command -v idcom &>/dev/null; then
 else
   echo "IDcom - already exists! 👌"
 fi
+
+echo -e "\n"
+echo "Install IDcom repositories..."
+echo "------------------------------------------------"
 
 if command -v idcom &>/dev/null; then
   if idcom git ls | grep -i "Nie Sklonowany" &>/dev/null; then
