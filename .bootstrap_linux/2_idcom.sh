@@ -75,9 +75,9 @@ echo "Install IDcom..."
 echo "------------------------------------------------"
 
 if ! command -v idcom &>/dev/null; then
-  mkdir -p ~/IDcom/DEVELOP
-  git clone git@github.com:IDcomGroup/pl.idcom.develop.config.git ~/IDcom/DEVELOP
-  chmod +x ~/IDcom/DEVELOP/pl.idcom.develop.config/bin/idcom
+  mkdir -p ~/IDcom/DEVOPS
+  git clone git@github.com:IDcomGroup/pl.idcom.devops.devtool.git ~/IDcom/DEVOPS
+  chmod +x ~/IDcom/DEVOPS/pl.idcom.devops.devtool/src/idcom
   echo "IDcom - installed 🔥"
 else
   echo "IDcom - already exists! 👌"
