@@ -556,9 +556,10 @@
     "svelte.plugin.svelte.note-new-transformation": false,
     "github.copilot.enable": {
         "*": true,
-        "yaml": false,
         "plaintext": false,
-        "markdown": true
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
     },
     "editor.tabCompletion": "onlySnippets",
     "svg.preview.mode": "svg",

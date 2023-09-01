@@ -84,6 +84,61 @@ matches:
             type: match
             params:
                 trigger: ";2lorem"
+    - trigger: ";5lorem"
+      replace: "{{four}} {{five}}"
+      vars:
+          - name: four
+            type: match
+            params:
+                trigger: ";3lorem"
+          - name: five
+            type: match
+            params:
+                trigger: ";2lorem"
+    - trigger: ";6lorem"
+      replace: "{{five}} {{six}}"
+      vars:
+          - name: five
+            type: match
+            params:
+                trigger: ";3lorem"
+          - name: six
+            type: match
+            params:
+                trigger: ";3lorem"
+    - trigger: ";7lorem"
+      replace: "{{six}} {{seven}}"
+      vars:
+          - name: six
+            type: match
+            params:
+                trigger: ";4lorem"
+          - name: seven
+            type: match
+            params:
+                trigger: ";3lorem"
+    - trigger: ";8lorem"
+      replace: "{{seven}} {{eight}}"
+      vars:
+          - name: seven
+            type: match
+            params:
+                trigger: ";4lorem"
+          - name: eight
+            type: match
+            params:
+                trigger: ";4lorem"
+    - trigger: ";9lorem"
+      replace: "{{eight}} {{nine}}"
+      vars:
+          - name: eight
+            type: match
+            params:
+                trigger: ";5lorem"
+          - name: nine
+            type: match
+            params:
+                trigger: ";4lorem"
 
     # Multiples paragraphs
     - trigger: "#2lorem"
@@ -119,3 +174,58 @@ matches:
             type: match
             params:
                 trigger: "#2lorem"
+    - trigger: "#5lorem"
+      replace: "{{four}}\n{{five}}"
+      vars:
+          - name: four
+            type: match
+            params:
+                trigger: "#3lorem"
+          - name: five
+            type: match
+            params:
+                trigger: "#2lorem"
+    - trigger: "#6lorem"
+      replace: "{{five}}\n{{six}}"
+      vars:
+          - name: five
+            type: match
+            params:
+                trigger: "#3lorem"
+          - name: six
+            type: match
+            params:
+                trigger: "#3lorem"
+    - trigger: "#7lorem"
+      replace: "{{six}} {{seven}}"
+      vars:
+          - name: six
+            type: match
+            params:
+                trigger: "#4lorem"
+          - name: seven
+            type: match
+            params:
+                trigger: "#3lorem"
+    - trigger: "#8lorem"
+      replace: "{{seven}} {{eight}}"
+      vars:
+          - name: seven
+            type: match
+            params:
+                trigger: "#4lorem"
+          - name: eight
+            type: match
+            params:
+                trigger: "#4lorem"
+    - trigger: "#9lorem"
+      replace: "{{eight}} {{nine}}"
+      vars:
+          - name: eight
+            type: match
+            params:
+                trigger: "#5lorem"
+          - name: nine
+            type: match
+            params:
+                trigger: "#4lorem"
