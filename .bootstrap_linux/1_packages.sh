@@ -276,17 +276,6 @@ else
 fi
 
 echo -e "\n"
-echo "Installing insomnia..."
-echo "------------------------------------------------"
-
-if ! command -v insomnia &>/dev/null; then
-  sudo snap install insomnia
-  echo "insomnia - installed 🔥"
-else
-  echo "insomnia - already exists! 👌"
-fi
-
-echo -e "\n"
 echo "Installing midnight commander..."
 echo "------------------------------------------------"
 
@@ -362,39 +351,58 @@ else
 fi
 
 echo -e "\n"
-echo "Installing node..."
+echo "Installing fast node manager (fnm)..."
 echo "------------------------------------------------"
 
-if ! command -v node &>/dev/null; then
-  sudo apt update -yqq
-  sudo apt install software-properties-common apt-transport-https ca-certificates gnupg2 curl build-essential -yqq
-  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-  sudo apt install nodejs -yqq
-  echo "node - installed 🔥"
+if ! command -v fnm &>/dev/null; then
+  curl -fsSL https://fnm.vercel.app/install | bash
+  echo "fnm - installed 🔥"
 else
-  echo "node - already exists! 👌"
+  echo "fnm - already exists! 👌"
+
+  echo -e "\n"
+  echo "Installing node..."
+  echo "------------------------------------------------"
+
+  if ! command -v node &>/dev/null; then
+    fnm install --lts
+    echo "node - installed 🔥"
+  else
+    echo "node - already exists! 👌"
+
+    echo -e "\n"
+    echo "Installing npn check updates..."
+    echo "------------------------------------------------"
+
+    if ! command -v ncu &>/dev/null; then
+      npm install --global npm-check-updates
+      echo "npn check updates - installed 🔥"
+    else
+      echo "npn check updates - already exists! 👌"
+    fi
+  fi
 fi
 
 echo -e "\n"
-echo "Installing npn check updates..."
+echo "Installing exa..."
 echo "------------------------------------------------"
 
-if ! command -v ncu &>/dev/null; then
-  sudo npm install --global npm-check-updates
-  echo "npn check updates - installed 🔥"
+if ! command -v exa &>/dev/null; then
+  sudo apt-get install exa -yqq
+  echo "exa - installed 🔥"
 else
-  echo "npn check updates - already exists! 👌"
+  echo "exa - already exists! 👌"
 fi
 
 echo -e "\n"
-echo "Installing prettier..."
+echo "Installing hub..."
 echo "------------------------------------------------"
 
-if ! command -v prettier &>/dev/null; then
-  sudo npm install --global prettier
-  echo "prettier - installed 🔥"
+if ! command -v hub &>/dev/null; then
+  sudo apt-get install hub -yqq
+  echo "hub - installed 🔥"
 else
-  echo "prettier - already exists! 👌"
+  echo "hub - already exists! 👌"
 fi
 
 echo -e "\n"
@@ -529,3 +537,9 @@ for i in "${customFonts[@]}"; do
     echo "$i - already exists! 👌"
   fi
 done
+
+echo -e "\n"
+echo "Now you should install..."
+echo "------------------------------------------------"
+
+echo "1. HTTPie - https://github.com/httpie/desktop#linux"

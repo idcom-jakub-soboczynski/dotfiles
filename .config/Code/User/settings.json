@@ -571,5 +571,8 @@
         "javascriptreact"
     ],
     "git.openRepositoryInParentFolders": "always",
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "[properties]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    }
 }

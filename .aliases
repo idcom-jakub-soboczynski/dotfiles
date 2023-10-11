@@ -1,63 +1,61 @@
-# UNALIAS
-unalias 1
-unalias 2
-unalias 3
-unalias 4
-unalias 5
-unalias 6
-unalias 7
-unalias 8
-unalias 9
-
 # GREP
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
 alias fgrep="fegrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
 alias egrep="egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
 
-# GIT
-alias ga="git add ."
-alias gc="git commit -m"
-alias gac="git commit -am"
-alias gco="git checkout"
-alias gcod="git checkout develop"
-alias gcom="git checkout master"
-alias gf="git fetch"
-alias gd="git diff"
-alias gl="git log"
-alias gs="git status"
-alias gss="git status -s"
-alias gp="git pull"
-alias gpush="git push"
-alias cleanbranches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
-alias check_branches_recur='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'
-
 # GENERAL
 alias c="clear"
 alias e="exit"
 alias g="git"
-alias systemupdate="sudo apt-get update && sudo apt-get upgrade -y && sudo snap refresh"
+alias systemupdate="sudo apt-get update -yqq && sudo apt-get upgrade -yqq && sudo snap refresh"
 alias cat="batcat"
-alias wstorm="webstorm"
-alias pstorm="phpstorm"
 alias clipboard="xclip -sel clip"
 alias week="date +%V"
 alias localip="ifconfig eno1"
-alias sz="source ~/.zshrc"
-alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
+alias la="exa -lah"
+alias ll="exa -lh"
+alias ls="exa -G"
+alias lsa="exa -lah"
 alias fsf='vim "$(fd . -t f --full-path "/home/$USER/" | fzf -i)"'
 alias fsd='cd "$(fd . -t d --full-path "/home/$USER/" | fzf -i)"'
 
 # NPM
 alias pn="pnpm"
+alias pnx="pnpm dlx"
 alias ni="npm install"
-alias nrs="npm run start -s --"
-alias nrd="npm run dev -s --"
-alias nrb="npm run build -s --"
-alias nrt="npm run test -s --"
+alias nrs="npm run start -s"
+alias nrd="npm run dev -s"
+alias nrb="npm run build -s"
+alias nrt="npm run test -s"
 alias flush-npm="rm -rf node_modules package-lock.json pnpm-lock.yaml && npm install"
 alias ncupatch="ncu -ui --target patch"
 alias ncuminor="ncu -ui --target minor"
 alias ncumajor="ncu -ui --target major"
+
+# GIT
+alias git="hub"
+alias ga="git add ."
+alias gb="git branch"
+alias gs="git status"
+alias gss="git status -s"
+alias gp="git pull"
+alias gf="git fetch"
+alias gbd="git checkout develop"
+alias gbm="git checkout master"
+alias gpush="git push"
+alias gl="git log"
+alias gc="git commit -m"
+alias gac="git commit -am"
+alias cleanbranches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
+alias deepcheckbranches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'
+
+# DOCKER
+alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
+alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
+alias dkill='docker rm $(docker stop $(docker ps -aq))'
+alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && ./docker_up.sh' \;"
+alias dwatchstats="watch -n 1 'docker stats --no-stream --format \"table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}\" | sort -k 3 -h -r'"
+alias dlogscurrent='docker logs -f $(basename "$PWD")'
 
 # IDCOM
 alias igs="idcom git status"
@@ -84,13 +82,12 @@ alias apanel="cd ~/AATIOT/PANEL/pl.aatiot.panel.front"
 alias apanelstandup="apanel && git standup"
 alias aupdate="agl && adbu && adu"
 
-# DOCKER
-alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
-alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
-alias dkill='docker rm $(docker stop $(docker ps -aq))'
-alias recursivedockerup="find . -type d -name develop -exec bash -c 'cd '{}' && ./docker_up.sh' \;"
-alias dwatchstats="watch -n 1 'docker stats --no-stream --format \"table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}\" | sort -k 3 -h -r'"
+# PHP
+alias installcomposers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
 
 # DOTFILES
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfilesupdate="dotfiles ac '$(date +'%Y-%m-%d %H:%M:%S'): update dotfiles' && dotfiles push"
+
+# SOURCES
+alias sz="source ~/.zshrc"

@@ -68,4 +68,5 @@ matches:
     - trigger: ";sign2"
       replace: "Best regards,\nJakub Soboczyński"
 
-    # And much more! For more information, visit the docs: https://espanso.org/docs/
+    - trigger: ";urlop"
+      replace: "Przerwa w świadczeniu usług - Jakub Soboczyński"

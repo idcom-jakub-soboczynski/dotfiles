@@ -1,10 +1,15 @@
 matches:
-    - trigger: ";idcommail1"
+    - trigger: ";imail1"
       replace: "jakub.soboczynski@idcom.pl"
 
-    - trigger: ";idcommail2"
+    - trigger: ";imail2"
       replace: "jakub.soboczynski.idcom@gmail.com"
 
-    - trigger: ";idcomnip"
+    - trigger: ";inip"
       replace: "7811802843"
 
+    - trigger: ";ion"
+      replace: "Dostępny"
+
+    - trigger: ";ioff"
+      replace: "Niedostępny"
