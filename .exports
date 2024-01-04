@@ -1,6 +1,7 @@
 # ZSH
 export ZSH="/home/$USER/.oh-my-zsh"
 
+export PATH="/home/$USER/IDcom/DEVELOP/pl.idcom.develop.config/bin:$PATH"
 export PATH="/home/$USER/IDcom/DEVOPS/pl.idcom.devops.devtool/src:$PATH"
 export PATH="/home/$USER/AATIOT/DEVELOP/pl.aatiot.develop.config/src/tool:$PATH"
 

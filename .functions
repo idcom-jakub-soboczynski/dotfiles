@@ -10,3 +10,11 @@ function drm {
 function lmc {
   cd "$(llama "$@")"
 }
+
+tcd() {
+  if [ -d ${PWD}/$1 ]; then
+    gnome-terminal --tab --working-directory=${PWD}/$1
+  else      
+    gnome-terminal --tab --working-directory=$1
+  fi
+}

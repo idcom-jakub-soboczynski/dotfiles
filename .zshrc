@@ -14,3 +14,4 @@ source $ZSH/oh-my-zsh.sh
 
 # fnm
 eval "$(fnm env --use-on-cd)"
+

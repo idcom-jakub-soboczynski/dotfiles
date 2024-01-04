@@ -395,6 +395,17 @@ else
 fi
 
 echo -e "\n"
+echo "Installing alacritty..."
+echo "------------------------------------------------"
+
+if ! command -v alacritty &>/dev/null; then
+  sudo snap install alacritty --classic
+  echo "alacritty - installed 🔥"
+else
+  echo "alacritty - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing hub..."
 echo "------------------------------------------------"
 
