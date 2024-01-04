@@ -380,6 +380,17 @@ else
     else
       echo "npn check updates - already exists! 👌"
     fi
+
+    echo -e "\n"
+    echo "Installing alacritty-themes..."
+    echo "------------------------------------------------"
+
+    if ! command -v alacritty-themes &>/dev/null; then
+      npm install --global alacritty-themes
+      echo "alacritty-themes - installed 🔥"
+    else
+      echo "alacritty-themes - already exists! 👌"
+    fi
   fi
 fi
 
