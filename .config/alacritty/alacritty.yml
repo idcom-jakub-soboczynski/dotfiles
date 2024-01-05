@@ -226,6 +226,10 @@ style: Block
 #   - (Windows) powershell
 shell:
     program: /usr/bin/zsh
+    args:
+        - -l
+        - -c
+        - "tmux attach || tmux"
 
 # Startup directory
 #

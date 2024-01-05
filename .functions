@@ -13,8 +13,8 @@ function lmc {
 
 tcd() {
   if [ -d ${PWD}/$1 ]; then
-    gnome-terminal --tab --working-directory=${PWD}/$1
+    tmux new-window -c ${PWD}/$1
   else      
-    gnome-terminal --tab --working-directory=$1
+    tmux new-window -c $1
   fi
 }

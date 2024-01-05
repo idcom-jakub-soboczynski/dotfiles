@@ -88,7 +88,7 @@ shadows=true
 
 [Layout]
 output_lines=0
-left_panel_size=106
+left_panel_size=136
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -116,6 +116,8 @@ clipboard_paste=
 base_color=
 xterm-256color=
 color_terminals=
+
+screen=
 
 [Panels]
 simple_swap=false
