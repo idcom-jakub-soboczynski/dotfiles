@@ -417,6 +417,17 @@ else
 fi
 
 echo -e "\n"
+echo "Installing tmux..."
+echo "------------------------------------------------"
+
+if ! command -v tmux &>/dev/null; then
+  sudo apt install tmux -yqq
+  echo "tmux - installed 🔥"
+else
+  echo "tmux - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing hub..."
 echo "------------------------------------------------"
 
