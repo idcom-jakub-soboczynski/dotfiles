@@ -577,5 +577,6 @@
     "[less]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
-    "workbench.editor.tabActionLocation": "right"
+    "workbench.editor.tabActionLocation": "right",
+    "search.smartCase": true
 }
