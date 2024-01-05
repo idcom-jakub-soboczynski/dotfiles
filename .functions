@@ -14,7 +14,7 @@ function lmc {
 tcd() {
   if [ -d ${PWD}/$1 ]; then
     tmux new-window -c ${PWD}/$1
-  else      
+  else
     tmux new-window -c $1
   fi
 }
