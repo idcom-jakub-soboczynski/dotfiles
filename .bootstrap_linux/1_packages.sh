@@ -192,6 +192,17 @@ else
 fi
 
 echo -e "\n"
+echo "Installing copyq..."
+echo "------------------------------------------------"
+
+if ! command -v copyq &>/dev/null; then
+  sudo apt install copyq -yqq
+  echo "copyq - installed 🔥"
+else
+  echo "copyq - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing pip3..."
 echo "------------------------------------------------"
 

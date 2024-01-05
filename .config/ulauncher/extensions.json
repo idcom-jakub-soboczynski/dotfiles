@@ -75,5 +75,12 @@
         "updated_at": "2023-05-16T17:19:20.295259",
         "last_commit": "0b0a5f8c760b9b369baac1499484c0d00847e349",
         "last_commit_time": "2021-12-21T06:32:17"
+    },
+    "com.github.friday.ulauncher-clipboard": {
+        "id": "com.github.friday.ulauncher-clipboard",
+        "url": "https://github.com/friday/ulauncher-clipboard",
+        "updated_at": "2024-01-05T10:03:51.563747",
+        "last_commit": "dde8e6c9db80b0c9301ebdc9b13c4383b4789bc8",
+        "last_commit_time": "2023-11-27T22:23:17"
     }
 }
