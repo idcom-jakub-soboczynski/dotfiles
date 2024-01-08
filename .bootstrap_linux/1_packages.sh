@@ -170,6 +170,17 @@ else
 fi
 
 echo -e "\n"
+echo "Installing bruno..."
+echo "------------------------------------------------"
+
+if ! command -v bruno &>/dev/null; then
+  sudo snap install bruno
+  echo "bruno - installed 🔥"
+else
+  echo "bruno - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing llama..."
 echo "------------------------------------------------"
 
@@ -585,5 +596,3 @@ done
 echo -e "\n"
 echo "Now you should install..."
 echo "------------------------------------------------"
-
-echo "1. HTTPie - https://github.com/httpie/desktop#linux"
