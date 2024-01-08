@@ -49,6 +49,7 @@ alias gl="git log"
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 alias clean_branches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
+alias deep_clean_branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && cleaned_branches=$(git branch --merged | grep -v -E "master|main|develop" | xargs) && [ -n "$cleaned_branches" ] && git branch -d $cleaned_branches && echo "Cleaned branches: $cleaned_branches for repo $repo"'\'' \;'
 alias deep_check_branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'
 
 # DOCKER
