@@ -20,16 +20,16 @@ colors:
 font:
     size: 8.0
     bold:
-        family: MesloLGL Nerd Font
+        family: InputMono
         style: Bold
     bold_italic:
-        family: MesloLGL Nerd Font
+        family: InputMono
         style: Bold Italic
     italic:
-        family: MesloLGL Nerd Font
+        family: InputMono
         style: Italic
     normal:
-        family: MesloLGL Nerd Font
+        family: InputMono
         style: Regular
     offset:
         x: 1

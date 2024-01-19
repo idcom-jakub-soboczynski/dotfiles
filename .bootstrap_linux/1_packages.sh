@@ -170,14 +170,15 @@ else
 fi
 
 echo -e "\n"
-echo "Installing bruno..."
+echo "Installing hoppscotch..."
 echo "------------------------------------------------"
 
-if ! command -v bruno &>/dev/null; then
-  sudo snap install bruno
-  echo "bruno - installed 🔥"
+if ! command -v hoppscotch &>/dev/null; then
+  curl -s -o ~/Downloads/Hoppscotch_linux_x64.deb https://github.com/hoppscotch/releases/releases/latest/download/Hoppscotch_linux_x64.deb
+  sudo dpkg -i Hoppscotch_linux_x64
+  echo "hoppscotch - installed 🔥"
 else
-  echo "bruno - already exists! 👌"
+  echo "hoppscotch - already exists! 👌"
 fi
 
 echo -e "\n"
@@ -306,19 +307,6 @@ if ! command -v mc &>/dev/null; then
   echo "midnight commander - installed 🔥"
 else
   echo "midnight commander - already exists! 👌"
-fi
-
-echo -e "\n"
-echo "Installing ulauncher..."
-echo "------------------------------------------------"
-
-if ! command -v ulauncher &>/dev/null; then
-  sudo add-apt-repository ppa:agornostal/ulauncher
-  sudo apt update -yqq
-  sudo apt install ulauncher -yqq
-  echo "ulauncher - installed 🔥"
-else
-  echo "ulauncher - already exists! 👌"
 fi
 
 echo -e "\n"
