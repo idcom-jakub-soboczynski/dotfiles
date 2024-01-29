@@ -106,6 +106,7 @@
     "terminal.integrated.allowChords": false,
     "terminal.integrated.fontSize": 11,
     "terminal.integrated.drawBoldTextInBrightColors": false,
+    "terminal.integrated.gpuAcceleration": "off",
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
     },
@@ -578,5 +579,6 @@
         "editor.defaultFormatter": "vscode.css-language-features"
     },
     "workbench.editor.tabActionLocation": "right",
+    "workbench.activityBar.location": "top",
     "search.smartCase": true
 }
