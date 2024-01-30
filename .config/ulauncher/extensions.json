@@ -1,1 +1,72 @@
-{}
+{
+    "com.github.ulauncher.ulauncher-kill": {
+        "id": "com.github.ulauncher.ulauncher-kill",
+        "url": "https://github.com/Ulauncher/ulauncher-kill",
+        "updated_at": "2024-01-30T11:19:14.081444",
+        "last_commit": "00ffe8266dbb6c2aea7d86a6363e51cec4b1981f",
+        "last_commit_time": "2022-11-26T16:15:05"
+    },
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2024-01-30T11:28:49.023142",
+        "last_commit": "827cfe5e1d2f89f742f811f981759787b0654fa9",
+        "last_commit_time": "2023-11-04T18:37:13"
+    },
+    "com.github.tchar.ulauncher-albert-calculate-anything": {
+        "id": "com.github.tchar.ulauncher-albert-calculate-anything",
+        "url": "https://github.com/tchar/ulauncher-albert-calculate-anything",
+        "updated_at": "2024-01-30T11:30:10.283662",
+        "last_commit": "ee0903174c8b87cd1f7c3b6c1acef10702547507",
+        "last_commit_time": "2021-08-12T06:39:56"
+    },
+    "com.github.friday.ulauncher-clipboard": {
+        "id": "com.github.friday.ulauncher-clipboard",
+        "url": "https://github.com/friday/ulauncher-clipboard",
+        "updated_at": "2024-01-30T11:31:07.869392",
+        "last_commit": "dde8e6c9db80b0c9301ebdc9b13c4383b4789bc8",
+        "last_commit_time": "2023-11-27T22:23:17"
+    },
+    "com.github.pbkhrv.ulauncher-keepassxc": {
+        "id": "com.github.pbkhrv.ulauncher-keepassxc",
+        "url": "https://github.com/pbkhrv/ulauncher-keepassxc",
+        "updated_at": "2024-01-30T11:34:15.268418",
+        "last_commit": "11309e2d7107fd1921dbce0295ba584203475307",
+        "last_commit_time": "2021-06-16T17:57:16"
+    },
+    "com.github.manahter.ulauncher-ip-analysis": {
+        "id": "com.github.manahter.ulauncher-ip-analysis",
+        "url": "https://github.com/manahter/ulauncher-IP-Analysis",
+        "updated_at": "2024-01-30T11:35:10.021653",
+        "last_commit": "ea408404cd5c860664e770bd49c03fcaa3681116",
+        "last_commit_time": "2021-12-29T16:25:34"
+    },
+    "com.github.melianmiko.ulauncher-bluetoothd": {
+        "id": "com.github.melianmiko.ulauncher-bluetoothd",
+        "url": "https://github.com/melianmiko/ulauncher-bluetoothd",
+        "updated_at": "2024-01-30T11:35:22.272150",
+        "last_commit": "880e439c8df6d72f530b64a9025d9c8a6087e53f",
+        "last_commit_time": "2023-05-08T10:34:47"
+    },
+    "com.github.brpaz.ulauncher-raindrop": {
+        "id": "com.github.brpaz.ulauncher-raindrop",
+        "url": "https://github.com/brpaz/ulauncher-raindrop",
+        "updated_at": "2024-01-30T11:36:35.352741",
+        "last_commit": "b5bdbc9915930a1da320728696576462737cb812",
+        "last_commit_time": "2022-10-15T09:38:30"
+    },
+    "com.github.brpaz.ulauncher-faker": {
+        "id": "com.github.brpaz.ulauncher-faker",
+        "url": "https://github.com/brpaz/ulauncher-faker",
+        "updated_at": "2024-01-30T11:38:24.633645",
+        "last_commit": "58832c94acc671a9f603ea7fbf5d4405110bb902",
+        "last_commit_time": "2021-12-12T15:46:10"
+    },
+    "com.github.d-enk.ulauncher-case-converter": {
+        "id": "com.github.d-enk.ulauncher-case-converter",
+        "url": "https://github.com/d-enk/ulauncher-case-converter",
+        "updated_at": "2024-01-30T11:41:49.093400",
+        "last_commit": "525dd2c0fa4c10dd99db76288dd7a5f0e58205ff",
+        "last_commit_time": "2022-07-13T19:33:21"
+    }
+}

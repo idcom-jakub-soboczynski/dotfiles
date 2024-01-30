@@ -277,6 +277,17 @@ else
 fi
 
 echo -e "\n"
+echo "Installing ulauncher..."
+echo "------------------------------------------------"
+
+if ! command -v ulauncher &>/dev/null; then
+  sudo apt install ulauncher -yqq
+  echo "ulauncher - installed 🔥"
+else
+  echo "ulauncher - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing inkscape..."
 echo "------------------------------------------------"
 
@@ -285,17 +296,6 @@ if ! command -v inkscape &>/dev/null; then
   echo "inkscape - installed 🔥"
 else
   echo "inkscape - already exists! 👌"
-fi
-
-echo -e "\n"
-echo "Installing emote..."
-echo "------------------------------------------------"
-
-if ! command -v emote &>/dev/null; then
-  sudo snap install emote
-  echo "emote - installed 🔥"
-else
-  echo "emote - already exists! 👌"
 fi
 
 echo -e "\n"
