@@ -427,6 +427,17 @@ else
 fi
 
 echo -e "\n"
+echo "Installing warp..."
+echo "------------------------------------------------"
+
+if ! command -v warp-terminal &>/dev/null; then
+  sudo apt install warp-terminal
+  echo "warp - installed 🔥"
+else
+  echo "warp - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing tmux..."
 echo "------------------------------------------------"
 

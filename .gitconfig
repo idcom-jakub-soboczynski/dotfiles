@@ -44,3 +44,5 @@
 	editor = vim
 	autocrlf = input
 	excludesfile = /home/jakub/.gitignore
+[branch]
+	sort = -committerdate
