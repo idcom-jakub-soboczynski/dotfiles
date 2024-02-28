@@ -113,7 +113,7 @@ X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
 Name[pl]=Google Chrome
-X-GNOME-Autostart-Delay=20
+X-GNOME-Autostart-Delay=45
 
 [Desktop Action new-window]
 Name=New Window

@@ -15,4 +15,4 @@ NoDisplay=false
 Hidden=false
 Name[pl]=Slack
 Comment[pl]=Slack Desktop
-X-GNOME-Autostart-Delay=5
+X-GNOME-Autostart-Delay=10
