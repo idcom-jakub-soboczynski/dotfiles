@@ -16,8 +16,8 @@ alias la="exa -lah"
 alias ll="exa -lh"
 alias ls="exa -G"
 alias lsa="exa -lah"
-alias fsf='vim "$(fd . -t f --full-path "/home/$USER/" | fzf -i)"'
-alias fsd='cd "$(fd . -t d --full-path "/home/$USER/" | fzf -i)"'
+alias fsf='vim "$(fd . -t f --full-path "$HOME" | fzf -i)"'
+alias fsd='cd "$(fd . -t d --full-path "$HOME" | fzf -i)"'
 alias find-large-files='du -h . | grep "[0-9\,]\+G"'
 
 # NPM

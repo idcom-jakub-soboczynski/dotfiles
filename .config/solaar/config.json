@@ -6,15 +6,17 @@
     "_name": "MX Keys Wireless Keyboard",
     "fn-swap": false
   },
-  "4069:1C17EF39": {
+  "4069:8B75BC0E": {
     "_modelId": "B01940690000",
     "_name": "Wireless Mouse MX Master 2S",
     "_sensitive": {
+      "dpi": false,
       "dpi-sliding": false,
+      "gesture2-gestures": false,
       "hires-smooth-invert": false,
       "hires-smooth-resolution": false,
       "mouse-gestures": false,
-      "smart-shift": true
+      "smart-shift": false
     },
     "_serial": "8B75BC0E",
     "_unitId": "C73F42D3",
@@ -56,13 +58,14 @@
     "_modelId": "B35B408A0000",
     "_name": "MX Keys Keyboard",
     "_sensitive": {
+      "backlight": false,
       "change-host": false,
       "disable-keyboard-keys": false,
       "multiplatform": true
     },
     "_serial": "9FCCB43A",
     "_unitId": "9FCCB43A",
-    "backlight": true,
+    "backlight": false,
     "disable-keyboard-keys": {
       "1": false,
       "16": false,

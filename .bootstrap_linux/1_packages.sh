@@ -170,15 +170,18 @@ else
 fi
 
 echo -e "\n"
-echo "Installing hoppscotch..."
+echo "Installing bruno..."
 echo "------------------------------------------------"
 
-if ! command -v hoppscotch &>/dev/null; then
-  curl -s -o ~/Downloads/Hoppscotch_linux_x64.deb https://github.com/hoppscotch/releases/releases/latest/download/Hoppscotch_linux_x64.deb
-  sudo dpkg -i Hoppscotch_linux_x64
-  echo "hoppscotch - installed 🔥"
+if ! command -v bruno &>/dev/null; then
+  sudo mkdir -p /etc/apt/keyrings
+  sudo gpg --no-default-keyring --keyring /etc/apt/keyrings/bruno.gpg --keyserver keyserver.ubuntu.com --recv-keys 9FA6017ECABE0266
+  echo "deb [signed-by=/etc/apt/keyrings/bruno.gpg] http://debian.usebruno.com/ bruno stable" | sudo tee /etc/apt/sources.list.d/bruno.list
+  sudo apt update -yqq
+  sudo apt install bruno -yqq
+  echo "bruno - installed 🔥"
 else
-  echo "hoppscotch - already exists! 👌"
+  echo "bruno - already exists! 👌"
 fi
 
 echo -e "\n"
