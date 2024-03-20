@@ -430,6 +430,21 @@ else
 fi
 
 echo -e "\n"
+echo "Installing table plus..."
+echo "------------------------------------------------"
+
+if ! command -v table-plus &>/dev/null; then
+  sudo apt install software-properties-common -yqq
+  wget -qO - https://deb.tableplus.com/apt.tableplus.com.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/tableplus-archive.gpg >/dev/null
+  sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
+  sudo apt update -yqq
+  sudo apt install tableplus -yqq
+  echo "table plus - installed 🔥"
+else
+  echo "table plus - already exists! 👌"
+fi
+
+echo -e "\n"
 echo "Installing warp..."
 echo "------------------------------------------------"
 
