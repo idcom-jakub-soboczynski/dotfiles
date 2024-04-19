@@ -363,6 +363,13 @@ else
   echo "xclip - already exists! 👌"
 fi
 
+if ! command -v mcfly &>/dev/null; then
+  sudo curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
+  echo "mcfly - installed 🔥"
+else
+  echo "mcfly - already exists! 👌"
+fi
+
 echo -e "\n"
 echo "Installing fast node manager (fnm)..."
 echo "------------------------------------------------"

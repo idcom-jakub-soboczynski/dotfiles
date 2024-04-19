@@ -12,6 +12,12 @@ unset file
 
 source $ZSH/oh-my-zsh.sh
 
+# bun completions
+[ -s "/home/jakub/.bun/_bun" ] && source "/home/jakub/.bun/_bun"
+
 # fnm
 eval "$(fnm env --use-on-cd)"
+
+# mcfly
+eval "$(mcfly init zsh)"
 
