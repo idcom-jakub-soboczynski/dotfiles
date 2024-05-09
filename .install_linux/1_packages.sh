@@ -604,7 +604,7 @@ echo "Installing custom fonts..."
 echo "------------------------------------------------"
 
 mkdir -p ~/.local/share/fonts
-customFonts=(Meslo Inconsolata JetBrainsMono FiraCode FiraMono Noto Overpass RobotoMono SpaceMono UbuntuMono)
+customFonts=(Meslo Inconsolata JetBrainsMono Monaspace FiraCode FiraMono Noto Overpass RobotoMono SpaceMono UbuntuMono)
 for i in "${customFonts[@]}"; do
   if ! ls ~/.local/share/fonts | grep -i "$i" &>/dev/null; then
     wget -qv https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$i".zip -O ~/.local/share/fonts/"$i".zip
