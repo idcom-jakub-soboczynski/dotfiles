@@ -5,5 +5,68 @@
 		"paths": [],
 		"tags": [],
 		"enabled": true
+	},
+	{
+		"name": "jst_03",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-jst.cms.v2.0.layouts/src/jst_03",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "jst_04",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-jst.cms.v2.0.layouts/src/jst_04",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "jst_05",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-jst.cms.v2.0.layouts/src/jst_05",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "web_02",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-web.cms.v2.0.layouts/src/web_02",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "web_03",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-web.cms.v2.0.layouts/src/web_03",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "web_05",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-web.cms.v2.0.layouts/src/web_05",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "rwd_oswiata_05",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.superszkolna.cms.v1.2.layouts/src/rwd_oswiata_05",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "rwd_oswiata_06",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.superszkolna.cms.v1.2.layouts/src/rwd_oswiata_06",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "pl.idcom.panel.front.old",
+		"rootPath": "/home/jakub/IDcom/PANEL/pl.idcom.panel.front.old",
+		"paths": [],
+		"tags": [],
+		"enabled": true
 	}
 ]
