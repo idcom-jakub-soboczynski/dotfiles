@@ -68,5 +68,12 @@
 		"paths": [],
 		"tags": [],
 		"enabled": true
+	},
+	{
+		"name": "Dotfiles .install_linux",
+		"rootPath": "/home/jakub/.install_linux",
+		"paths": [],
+		"tags": [],
+		"enabled": true
 	}
 ]

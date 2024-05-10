@@ -99,3 +99,43 @@ if command -v idcom &>/dev/null; then
 else
   echo "IDcom repositories - already exists! 👌"
 fi
+
+echo -e "\n"
+echo "Creating symlinks for vscode settings..."
+echo "------------------------------------------------"
+
+if ! ls -laH ~/.config/Code/User | grep -i "^l" | grep -i keybindings.json &>/dev/null; then
+  ln -s ~/.vscode/keybindings.json ~/.config/Code/User/keybindings.json
+  echo "keybindings.json file - symlinked 🔥"
+else
+  echo "keybindings.json file - already exists 👌"
+fi
+
+if ! ls -laH ~/.config/Code/User | grep -i "^l" | grep -i settings.json &>/dev/null; then
+  ln -s ~/.vscode/settings.json ~/.config/Code/User/settings.json
+  echo "settings.json file - symlinked 🔥"
+else
+  echo "settings.json file - already exists 👌"
+fi
+
+if ! ls -laH ~/.config/Code/User | grep -i "^l" | grep -i projects.json &>/dev/null; then
+  ln -s ~/.vscode/projects.json ~/.config/Code/User/projects.json
+  echo "projects.json file - symlinked 🔥"
+else
+  echo "projects.json file - already exists 👌"
+fi
+
+if ! ls -laH ~/.config/Code/User | grep -i "^l" | grep -i spellright.dict &>/dev/null; then
+  ln -s ~/.vscode/spellright.dict ~/.config/Code/User/spellright.dict
+  echo "spellright.dict file - symlinked 🔥"
+else
+  echo "spellright.dict file - already exists 👌"
+fi
+
+if ! ls -laH ~/.config/Code/User | grep -i "^l" | grep -i snippets &>/dev/null; then
+  rm -rf ~/.config/Code/User/snippets
+  ln -s ~/.vscode/snippets ~/.config/Code/User
+  echo "snippets dir - symlinked 🔥"
+else
+  echo "snippets dir - already exists 👌"
+fi
