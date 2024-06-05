@@ -117,3 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=/opt/firefox/firefox:$PATH
+. "$HOME/.cargo/env"

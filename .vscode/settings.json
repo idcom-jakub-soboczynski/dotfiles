@@ -104,7 +104,7 @@
   "terminal.integrated.fontFamily": "Monaspace Neon Var, Input Mono, Space Mono, Recursive, Jetbrains Mono, MesloLGL Nerd Font, Monaco, Courier New, monospace",
   "terminal.integrated.fontWeight": "800",
   "terminal.integrated.allowChords": false,
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 13,
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.gpuAcceleration": "off",
 
@@ -489,5 +489,6 @@
   "conventionalCommits.promptFooter": false,
   "conventionalCommits.showNewVersionNotes": false,
   "window.customTitleBarVisibility": "auto",
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "github.copilot.editor.enableAutoCompletions": true
 }

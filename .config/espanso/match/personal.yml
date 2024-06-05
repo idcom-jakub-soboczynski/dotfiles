@@ -56,7 +56,7 @@ matches:
     - trigger: ";mail2"
       replace: "jakub.soboczynski@icloud.com"
 
-    - trigger: ";mailnewsletter"
+    - trigger: ";mailnews"
       replace: "teziovsky@stoopinbox.com"
 
     - trigger: ";phone1"
