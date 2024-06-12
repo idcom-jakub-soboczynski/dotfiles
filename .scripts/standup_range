@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Function to print usage
+usage() {
+  echo "Usage: $0 [start_date] [end_date]"
+  echo "Date format: YYYY-MM-DD"
+  echo "Start date is optional, defaults to today's date"
+  echo "End date is optional, defaults to today's date"
+  exit 1
+}
+
+# Assign arguments to variables
+start_date="${1:-$(date +%Y-%m-%d)}"
+end_date="${2:-$(date +%Y-%m-%d)}"
+
+# Convert start and end dates to seconds since epoch
+start_seconds=$(date -d "$start_date" +%s)
+end_seconds=$(date -d "$end_date" +%s)
+
+# Check if start_date is before end_date
+if [ "$start_seconds" -gt "$end_seconds" ]; then
+  echo "Start date must be before end date"
+  exit 1
+fi
+
+# Iterate through each day in the date range
+current_date="$start_date"
+
+while [ "$(date -d "$current_date" +%s)" -le "$end_seconds" ]; do
+  next_date=$(date -d "$current_date + 1 day" +%Y-%m-%d)
+
+  # Define the start and end time for the current day
+  day_start="${current_date} 00:00:00"
+  day_end="${current_date} 23:59:59"
+
+  # Build the git standup command
+  git_standup_cmd="git standup -A \"$day_start\" -B \"$day_end\" -s -m 5"
+
+  # Execute the git standup command and filter out unwanted lines using awk
+  output=$(eval $git_standup_cmd)
+
+  # Print the date header and output if there are any commits
+  if [ -n "$output" ]; then
+    # Define the color for the date header (e.g., green)
+    COLOR_GREEN="\033[0;32m"
+    COLOR_RESET="\033[0m"
+
+    # Print a separator line with the current date in color
+    echo
+    echo -e "${COLOR_GREEN}=================================================="
+    echo "Commits for date: $current_date"
+    echo -e "==================================================${COLOR_RESET}"
+    echo
+    eval $git_standup_cmd
+  fi
+
+  # Move to the next day
+  current_date="$next_date"
+done

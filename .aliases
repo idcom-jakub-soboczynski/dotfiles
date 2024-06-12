@@ -48,6 +48,8 @@ alias gpush="git push"
 alias gl="git log"
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
+alias standup="git standup -A 'date '+%Y-%m-%d' 00:00'"
+alias i-standup-daily="(cd ~/IDcom && standup_range | generate_daily)"
 alias clean-branches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
 alias deep-clean-branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && cleaned_branches=$(git branch --merged | grep -v -E "master|main|develop" | xargs) && [ -n "$cleaned_branches" ] && git branch -d $cleaned_branches && echo "Cleaned branches: $cleaned_branches for repo $repo"'\'' \;'
 alias deep-check-branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'

@@ -456,10 +456,21 @@ echo "Installing warp..."
 echo "------------------------------------------------"
 
 if ! command -v warp-terminal &>/dev/null; then
-  sudo apt install warp-terminal
+  sudo apt install warp-terminal -yqq
   echo "warp - installed 🔥"
 else
   echo "warp - already exists! 👌"
+fi
+
+echo -e "\n"
+echo "Installing flameshot..."
+echo "------------------------------------------------"
+
+if ! command -v flameshot &>/dev/null; then
+  sudo apt install flameshot -yqq
+  echo "flameshot - installed 🔥"
+else
+  echo "flameshot - already exists! 👌"
 fi
 
 echo -e "\n"
