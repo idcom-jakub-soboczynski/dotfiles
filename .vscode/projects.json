@@ -82,5 +82,26 @@
 		"paths": [],
 		"tags": [],
 		"enabled": true
+	},
+	{
+		"name": "pl.idcom-jst.cms.v2.0.layouts",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-jst.cms.v2.0.layouts",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "pl.idcom-web.cms.v2.0.layouts",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.idcom-web.cms.v2.0.layouts",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "pl.superszkolna.cms.v1.2.layouts",
+		"rootPath": "/home/jakub/IDcom/LAYOUT/pl.superszkolna.cms.v1.2.layouts",
+		"paths": [],
+		"tags": [],
+		"enabled": true
 	}
 ]

@@ -82,5 +82,12 @@
         "updated_at": "2024-03-05T12:41:56.053212",
         "last_commit": "12f698b7125a48088ca066557d89913bc8542d7d",
         "last_commit_time": "2024-01-29T09:17:26"
+    },
+    "com.github.sergius02.ulauncher-colorconverter": {
+        "id": "com.github.sergius02.ulauncher-colorconverter",
+        "url": "https://github.com/sergius02/ulauncher-colorconverter",
+        "updated_at": "2024-07-05T11:08:53.674471",
+        "last_commit": "2d5e2bc17e89f1f1dc561f73e68ea574e0be844a",
+        "last_commit_time": "2020-12-06T20:59:43"
     }
 }
