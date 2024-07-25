@@ -11,6 +11,7 @@ move_and_resize_window() {
     wmctrl -ir "$window_id" -b remove,maximized_vert,maximized_horz
     wmctrl -ir "$window_id" -t "$desktop"
     wmctrl -ir "$window_id" -e "$geometry"
+    wmctrl -ir "$window_id" -b add,maximized_vert,maximized_horz
   else
     echo "ID of $1 not found."
   fi
