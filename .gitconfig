@@ -37,14 +37,36 @@
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
-[user]
-	name = Jakub Soboczyński
-	email = jakub.soboczynski@idcom.pl
 [core]
-	editor = vim
 	autocrlf = input
+	editor = vim
+	pager = delta
 	excludesfile = /home/jakub/.gitignore
+[interactive]
+	diffFilter = delta --color-only
+[add.interactive]
+	useBuiltin = false
+[delta]
+	navigate = true
+	light = false
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+[init]
+	defaultBranch = main
+[push]
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+	autoSetupRemote = true
+[pull]
+	rebase = false
 [branch]
 	sort = -committerdate
 [pager]
 	branch = false
+[user]
+	name = Jakub Soboczyński
+	email = jakub.soboczynski@idcom.pl

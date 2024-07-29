@@ -21,3 +21,5 @@ eval "$(fnm env --use-on-cd)"
 # mcfly
 eval "$(mcfly init zsh)"
 
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
