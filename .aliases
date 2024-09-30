@@ -19,7 +19,10 @@ alias ls="exa -G"
 alias lsa="exa -lah"
 alias fsf='vim "$(fd . -t f --full-path "$HOME/" | fzf -i)"'
 alias fsd='cd "$(fd . -t d --full-path "$HOME/" | fzf -i)"'
-alias find-large-files='du -h . | grep "[0-9\,]\+G"'
+alias find-large-files='du -h . | rg -e "[0-9,]*\.*[0-9,]+G"'
+alias ai-shell='gh copilot suggest -t shell'
+alias ai-gh='gh copilot suggest -t gh'
+alias ai-git='gh copilot suggest -t git'
 
 # NPM
 alias pn="pnpm"
@@ -51,8 +54,7 @@ alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 alias standup="git standup -A 'date '+%Y-%m-%d' 00:00'"
 alias i-standup-daily="(cd ~/IDcom && standup_range | generate_daily)"
-alias clean-branches="git branch --merged | egrep -v '(^\*|master|main|develop)' | xargs git branch -d"
-alias deep-clean-branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && cleaned_branches=$(git branch --merged | grep -v -E "master|main|develop" | xargs) && [ -n "$cleaned_branches" ] && git branch -d $cleaned_branches && echo "Cleaned branches: $cleaned_branches for repo $repo"'\'' \;'
+alias clean-branches="git branch --merged | rg -v -e '(^\*|master|main|develop)' | xargs git branch -d"
 alias deep-check-branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'
 
 # DOCKER

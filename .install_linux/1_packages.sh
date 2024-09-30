@@ -295,7 +295,8 @@ echo "Installing inkscape..."
 echo "------------------------------------------------"
 
 if ! command -v inkscape &>/dev/null; then
-  sudo snap install inkscape
+  sudo apt-get update
+  sudo apt-get install inkscape
   echo "inkscape - installed 🔥"
 else
   echo "inkscape - already exists! 👌"
