@@ -20,6 +20,8 @@ move_and_resize_window() {
 # Desktop Left
 ## Google Chrome
 move_and_resize_window "google-chrome.Google-chrome" 0 "0,0,0,1920,1280"
+## Brave Browser
+move_and_resize_window "brave-browser.Brave-browser" 0 "0,0,0,1920,1280"
 
 ## Webstorm
 move_and_resize_window "jetbrains-webstorm.jetbrains-webstorm" 0 "0,1920,0,1920,1280"
