@@ -490,5 +490,8 @@
   "conventionalCommits.showNewVersionNotes": false,
   "window.customTitleBarVisibility": "auto",
   "window.titleBarStyle": "custom",
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "[lua]": {
+    "editor.defaultFormatter": "yinfei.luahelper"
+  }
 }

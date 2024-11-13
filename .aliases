@@ -1,28 +1,26 @@
 # GREP
-alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
-alias fgrep="fegrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
-alias egrep="egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+alias grep="rg --hidden --glob '!.git/' --glob '!node_modules/' --glob '!.bzr/' --glob '!CVS/' --glob '!.hg/' --glob '!.svn/' --glob '!.idea/' --glob '!.tox/'"
+alias fgrep="rg -F --hidden --glob '!.git/' --glob '!node_modules/' --glob '!.bzr/' --glob '!CVS/' --glob '!.hg/' --glob '!.svn/' --glob '!.idea/' --glob '!.tox/'"
+alias egrep="rg -e --hidden --glob '!.git/' --glob '!node_modules/' --glob '!.bzr/' --glob '!CVS/' --glob '!.hg/' --glob '!.svn/' --glob '!.idea/' --glob '!.tox/'"
 
 # GENERAL
 alias c="clear"
 alias e="exit"
 alias g="git"
-alias system-update="sudo apt-get update -yqq && sudo apt-get upgrade -yqq && sudo snap refresh"
 alias cat="batcat --style=plain,header"
 alias clipboard="xclip -sel clip"
 alias week="date +%V"
 alias localip="ifconfig wlp2s0"
 alias externalip="curl ifconfig.me"
-alias la="exa -lah"
-alias ll="exa -lh"
-alias ls="exa -G"
-alias lsa="exa -lah"
+alias la="eza -lah"
+alias ll="eza -lh"
+alias ls="eza -G"
+alias lsa="eza -lah"
 alias fsf='vim "$(fd . -t f --full-path "$HOME/" | fzf -i)"'
 alias fsd='cd "$(fd . -t d --full-path "$HOME/" | fzf -i)"'
 alias find-large-files='du -h . | rg -e "[0-9,]*\.*[0-9,]+G"'
-alias ai-shell='gh copilot suggest -t shell'
-alias ai-gh='gh copilot suggest -t gh'
-alias ai-git='gh copilot suggest -t git'
+alias cd="z"
+alias system-update="sudo apt-get update -yqq && sudo apt-get upgrade -yqq && sudo snap refresh"
 
 # NPM
 alias pn="pnpm"
@@ -54,8 +52,10 @@ alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 alias standup="git standup -A 'date '+%Y-%m-%d' 00:00'"
 alias i-standup-daily="(cd ~/IDcom && standup_range | generate_daily)"
-alias clean-branches="git branch --merged | rg -v -e '(^\*|master|main|develop)' | xargs git branch -d"
-alias deep-check-branches='find . -type d -name ".git" -execdir sh -c '\''cd "{}" && repo=$(basename "$(dirname "$(pwd)")") && branch=$(git symbolic-ref --short HEAD 2>/dev/null) && [ "$branch" != "develop" ] && echo "Repo: $repo is actually on branch $branch"'\'' \;'
+alias deep-check-branches='deep_check_branches'
+
+# GITHUB
+alias ghmerge="gh pr create && gh pr merge"
 
 # DOCKER
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"

@@ -416,14 +416,19 @@ else
 fi
 
 echo -e "\n"
-echo "Installing exa..."
+echo "Installing eza..."
 echo "------------------------------------------------"
 
-if ! command -v exa &>/dev/null; then
-  sudo apt-get install exa -yqq
-  echo "exa - installed 🔥"
+if ! command -v eza &>/dev/null; then
+  sudo mkdir -p /etc/apt/keyrings
+  wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+  echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+  sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+  sudo apt update -yqq
+  sudo apt install -yqq eza
+  echo "eza - installed 🔥"
 else
-  echo "exa - already exists! 👌"
+  echo "eza - already exists! 👌"
 fi
 
 echo -e "\n"
@@ -435,6 +440,20 @@ if ! command -v alacritty &>/dev/null; then
   echo "alacritty - installed 🔥"
 else
   echo "alacritty - already exists! 👌"
+fi
+
+echo -e "\n"
+echo "Installing wezterm..."
+echo "------------------------------------------------"
+
+if ! command -v wezterm &>/dev/null; then
+  curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
+  echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+  sudo apt update -yqq
+  sudo apt install wezterm -yqq
+  echo "wezterm - installed 🔥"
+else
+  echo "wezterm - already exists! 👌"
 fi
 
 echo -e "\n"

@@ -1,20 +1,53 @@
+# GREP
 function findtext {
   rg -H --no-heading --color=always -i --files-with-matches --hidden "$1"
-}
-
-function drm {
-  docker stop "$1"
-  docker rm "$1"
 }
 
 function lmc {
   cd "$(llama "$@")"
 }
 
+# TMUX
 tcd() {
   if [ -d ${PWD}/$1 ]; then
     tmux new-window -c ${PWD}/$1
   else
     tmux new-window -c $1
   fi
+}
+
+# DOCKER
+function drm {
+  docker stop "$1"
+  docker rm "$1"
+}
+
+# GIT
+deep_check_branches() {
+  find . -type d -name ".git" -execdir sh -c '
+      cd "{}" &&
+      repo=$(basename "$(dirname "$(pwd)")") &&
+      branch=$(git symbolic-ref --short HEAD 2>/dev/null) &&
+      [ "$branch" != "develop" ] &&
+      echo "Repo: $repo is actually on branch $branch"
+  ' \;
+}
+
+# POSTGRES
+pgdump() {
+  if [ "$#" -ne 2 ]; then
+    echo "Usage: pgdumpb <connection_string> <file_name>"
+    echo "Config: Configure function in .functions file"
+    return 1
+  fi
+  pg_dump "$1" --no-owner --no-privileges -F c -b -v -f "$2.dump"
+}
+
+pgrestore() {
+  if [ "$#" -ne 2 ]; then
+    echo "Usage: pgrestore <connection_string> <dump_file>"
+    echo "Config: Configure function in .functions file"
+    return 1
+  fi
+  pg_restore -d "$1" --no-owner --role={{role}} "$2.dump"
 }
