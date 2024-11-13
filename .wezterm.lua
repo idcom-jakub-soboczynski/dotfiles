@@ -100,7 +100,7 @@ config.command_palette_fg_color = scheme.foreground
 
 -- WINDOW
 config.enable_tab_bar = true
-config.tab_max_width = 100
+config.tab_max_width = 30
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
@@ -195,7 +195,7 @@ config.keys = {{
     action = act.PasteFrom("Clipboard")
 }, {
     key = "c",
-    mods = "CTRL",
+    mods = "CTRL|SHIFT",
     action = act.CopyTo("ClipboardAndPrimarySelection")
 }}
 
