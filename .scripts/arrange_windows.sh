@@ -25,19 +25,18 @@ move_and_resize_window "brave-browser.Brave-browser" 0 "0,0,0,1920,1280"
 
 ## Webstorm
 move_and_resize_window "jetbrains-webstorm.jetbrains-webstorm" 0 "0,1920,0,1920,1280"
-
 ## Visual Studio Code
 move_and_resize_window "code.Code" 0 0,1920,0,1920,1280
 
 # Desktop Right
 ## Slack
 move_and_resize_window "slack.Slack" 1 "0,0,0,1920,1280"
-
 ## Mozilla Thunderbird
 move_and_resize_window "Mail.thunderbird" 1 "0,0,0,1920,1280"
 
 ## Alacritty
 move_and_resize_window "Alacritty.Alacritty" 1 "0,1920,0,1920,1280"
-
+## Wezterm
+move_and_resize_window "org.wezfurlong.wezterm.org.wezfurlong.wezterm" 1 "0,1920,0,1920,1280"
 ## Warp
 move_and_resize_window "dev.warp.Warp.dev.warp.Warp" 1 "0,1920,0,1920,1280"
