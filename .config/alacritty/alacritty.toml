@@ -1,0 +1,299 @@
+# COLORS
+[colors.normal]
+black = "#2E2E2E"
+blue = "#43AAF9"
+cyan = "#43AAF9"
+green = "#5BD1B9"
+magenta = "#BA57E5"
+red = "#E61F44"
+white = "#E5E9F0"
+yellow = "#FAC760"
+
+[colors.primary]
+background = "#000000"
+foreground = "#DCE3EA"
+
+
+# CURSOR
+[cursor]
+blink_interval = 500
+blink_timeout = 0
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+
+# FONT
+[font]
+size = 8.0
+
+[font.bold]
+family = "InputMono"
+style = "Bold"
+
+[font.bold_italic]
+family = "InputMono"
+style = "Bold Italic"
+
+[font.italic]
+family = "InputMono"
+style = "Italic"
+
+[font.normal]
+family = "InputMono"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 1
+
+
+# KEYBOARD BINDINGS
+[[keyboard.bindings]]
+key = "T"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["new-window"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["kill-window"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "D"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["split-window", "-h"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "D"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["split-window", "-v"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "["
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-L"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "]"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-R"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-L"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-R"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "["
+mods = "Alt"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-U"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "]"
+mods = "Alt"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-D"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+
+[keyboard.bindings.command]
+args = ["select-window", "-p"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+
+[keyboard.bindings.command]
+args = ["select-window", "-n"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "SearchForward"
+key = "F"
+mode = "~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchBackward"
+key = "B"
+mode = "~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mode = "AppCursor"
+mods = "Control"
+
+[[keyboard.bindings]]
+key = "Key1"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "1"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key2"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "2"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key3"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "3"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key4"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "4"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key5"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "5"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key6"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "6"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key7"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "7"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key8"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "8"]
+program = "/usr/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key9"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["selectw", "-t", "9"]
+program = "/usr/bin/tmux"
+
+[scrolling]
+history = 5000
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+
+# TERMINAL
+[terminal.shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "/usr/bin/zsh"
+
+
+# WINDOW
+[window]
+dynamic_title = false
+decorations = "None"
+startup_mode = "Maximized"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 12
+y = 12
