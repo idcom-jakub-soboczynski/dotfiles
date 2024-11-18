@@ -170,21 +170,6 @@ else
 fi
 
 echo -e "\n"
-echo "Installing bruno..."
-echo "------------------------------------------------"
-
-if ! command -v bruno &>/dev/null; then
-  sudo mkdir -p /etc/apt/keyrings
-  sudo gpg --no-default-keyring --keyring /etc/apt/keyrings/bruno.gpg --keyserver keyserver.ubuntu.com --recv-keys 9FA6017ECABE0266
-  echo "deb [signed-by=/etc/apt/keyrings/bruno.gpg] http://debian.usebruno.com/ bruno stable" | sudo tee /etc/apt/sources.list.d/bruno.list
-  sudo apt update -yqq
-  sudo apt install bruno -yqq
-  echo "bruno - installed 🔥"
-else
-  echo "bruno - already exists! 👌"
-fi
-
-echo -e "\n"
 echo "Installing llama..."
 echo "------------------------------------------------"
 
@@ -440,46 +425,6 @@ if ! command -v alacritty &>/dev/null; then
   echo "alacritty - installed 🔥"
 else
   echo "alacritty - already exists! 👌"
-fi
-
-echo -e "\n"
-echo "Installing wezterm..."
-echo "------------------------------------------------"
-
-if ! command -v wezterm &>/dev/null; then
-  curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
-  echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-  sudo apt update -yqq
-  sudo apt install wezterm -yqq
-  echo "wezterm - installed 🔥"
-else
-  echo "wezterm - already exists! 👌"
-fi
-
-echo -e "\n"
-echo "Installing table plus..."
-echo "------------------------------------------------"
-
-if ! command -v table-plus &>/dev/null; then
-  sudo apt install software-properties-common -yqq
-  wget -qO - https://deb.tableplus.com/apt.tableplus.com.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/tableplus-archive.gpg >/dev/null
-  sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
-  sudo apt update -yqq
-  sudo apt install tableplus -yqq
-  echo "table plus - installed 🔥"
-else
-  echo "table plus - already exists! 👌"
-fi
-
-echo -e "\n"
-echo "Installing warp..."
-echo "------------------------------------------------"
-
-if ! command -v warp-terminal &>/dev/null; then
-  sudo apt install warp-terminal -yqq
-  echo "warp - installed 🔥"
-else
-  echo "warp - already exists! 👌"
 fi
 
 echo -e "\n"
