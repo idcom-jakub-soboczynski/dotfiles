@@ -20,6 +20,7 @@ alias fsd='cd "$(fd . -t d --full-path "$HOME/" | fzf -i)"'
 alias find-large-files='du -h . | rg -e "[0-9,]*\.*[0-9,]+G"'
 alias cd="z"
 alias system-update="sudo apt-get update -yqq && sudo apt-get upgrade -yqq && sudo snap refresh"
+alias arrange-windows="sh ~/.scripts/arrange_windows.sh"
 
 # NPM
 alias pn="pnpm"
@@ -29,6 +30,7 @@ alias nrs="npm run start -s"
 alias nrd="npm run dev -s"
 alias nrb="npm run build -s"
 alias nrt="npm run test -s"
+alias nrf="npm run fix"
 alias flush-npm="rm -rf node_modules package-lock.json pnpm-lock.yaml && npm install"
 alias ncu-patch="ncu -ui --target patch"
 alias ncu-minor="ncu -ui --target minor"
@@ -95,7 +97,7 @@ alias apanelstandup="apanel && git standup"
 alias aupdate="agl && adbu && adu"
 
 # PHP
-alias install-composers="find . -type d -name bin -exec bash -c 'cd '{}' && ./composer.sh' \; "
+alias install-composers="find . -type d -name bin -exec bash -c 'cd \"{}\" && [ -f composer.sh ] && echo \"Executing in: {}\" && ./composer.sh' \;"
 
 # DOTFILES
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

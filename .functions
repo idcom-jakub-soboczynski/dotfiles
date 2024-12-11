@@ -18,8 +18,10 @@ tcd() {
 
 # DOCKER
 function drm {
-  docker stop "$1"
-  docker rm "$1"
+  for container in "$@"; do
+    docker stop "$container"
+    docker rm "$container"
+  done
 }
 
 # GIT
