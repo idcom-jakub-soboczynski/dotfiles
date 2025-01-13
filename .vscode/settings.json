@@ -47,9 +47,9 @@
   "editor.renderWhitespace": "boundary",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
     "source.fixAll": "explicit",
-    "addMissingImports": "explicit"
+    "source.organizeImports": "explicit",
+    "source.addMissingImports": "explicit"
   },
   "editor.hover.delay": 200,
   "editor.wordBasedSuggestions": "off",
@@ -493,5 +493,6 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "[lua]": {
     "editor.defaultFormatter": "yinfei.luahelper"
-  }
+  },
+  "vue.server.hybridMode": true
 }

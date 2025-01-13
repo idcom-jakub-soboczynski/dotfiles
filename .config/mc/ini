@@ -88,7 +88,7 @@ shadows=true
 
 [Layout]
 output_lines=0
-left_panel_size=59
+left_panel_size=118
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -158,7 +158,7 @@ ignore_dirs_enable=true
 ignore_dirs=
 
 [Panelize]
-Modyfikowane pliki git=git ls-files --modified
-Znajdź odrzuty po łataniu=find . -name \\*.rej -print
-Znajdź pliki *.orig po łataniu=find . -name \\*.orig -print
 Znajdź programy SUID i SGID=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Modyfikowane pliki git=git ls-files --modified
+Znajdź pliki *.orig po łataniu=find . -name \\*.orig -print
+Znajdź odrzuty po łataniu=find . -name \\*.rej -print
