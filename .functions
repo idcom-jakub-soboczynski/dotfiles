@@ -8,7 +8,7 @@ function lmc {
 }
 
 # TMUX
-tcd() {
+function tcd() {
   if [ -d ${PWD}/$1 ]; then
     tmux new-window -c ${PWD}/$1
   else
@@ -25,7 +25,7 @@ function drm {
 }
 
 # GIT
-deep_check_branches() {
+function deep_check_branches() {
   find . -type d -name ".git" -execdir sh -c '
       cd "{}" &&
       repo=$(basename "$(dirname "$(pwd)")") &&
@@ -36,7 +36,7 @@ deep_check_branches() {
 }
 
 # POSTGRES
-pgdump() {
+function pgdump() {
   if [ "$#" -ne 2 ]; then
     echo "Usage: pgdumpb <connection_string> <file_name>"
     echo "Config: Configure function in .functions file"
@@ -45,7 +45,7 @@ pgdump() {
   pg_dump "$1" --no-owner --no-privileges -F c -b -v -f "$2.dump"
 }
 
-pgrestore() {
+function pgrestore() {
   if [ "$#" -ne 2 ]; then
     echo "Usage: pgrestore <connection_string> <dump_file>"
     echo "Config: Configure function in .functions file"
